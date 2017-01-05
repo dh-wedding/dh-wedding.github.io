@@ -38,7 +38,8 @@ function initMap() {
           address[0].long_name + ' ' + address[1].long_name + '<br>'+
           address[2].long_name + ', ' + address[4].short_name + ' ' +
           address[6].long_name + '<br>' +
-          '<a target="_blank" href="https://maps.app.goo.gl/?link=https://www.google.com/maps/dir/33.2881759,-87.5627093/Southern%2BHouse%2B%2526%2BGarden,%2B15308%2BShepard%2BPark%2BRd,%2BKnoxville,%2BAL%2B35469/@33.1659011,-87.7799056,11z/data%3D!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8885e26bf8cd9283:0xfb538db64ad7762c!2m2!1d-87.752119!2d33.041742?hl%3Den-US%26utm_source%3Dapp-invite%26mt%3D8%26pt%3D9008%26utm_medium%3DSIMPLE%26utm_campaign%3Ds2e-ai%26ct%3Ds2e-ai&apn=com.google.android.apps.maps&amv=703000000&isi=585027354&ibi=com.google.Maps&ius=comgooglemapsurl&utm_source=app-invite&mt=8&pt=9008&utm_medium=SIMPLE&utm_campaign=s2e-ai&ct=s2e-ai&invitation_id=493454522602-70b0b068-7564-4c1c-8016-902e7a8ee4be">Open in Google Maps</a>'+ '</div>');
+          // '<a target="_blank" href="#">Open in Google Maps</a>' + 
+          '</div>');
         infowindow.open(map, marker);
       // });
     }
