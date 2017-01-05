@@ -1,0 +1,54 @@
+/*body{
+    text-align: center;
+    background: #00ECB9;
+  font-family: sans-serif;
+  font-weight: 100;
+}*/
+
+#clock {
+  text-align: center;
+  display: table;
+  
+}
+
+#clockdiv{
+  margin:auto 0px;
+  font-family: 'Montserrat', sans-serif;
+  /*color: #CBD4C2;*/
+  /*color: #40C9A2;*/
+  color: #FF6F5E;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+  height: inherit; /*inherits height from scrolling divs*/
+}
+
+/*----- outer -----*/
+#clockdiv > div{
+  padding: 10px;
+  display: inline-block;
+  /*border: 2px solid black;*/
+  /*background-color: rgba(0,0,0,.75);*/
+}
+
+/*----- inner -----*/
+#clockdiv div > span{
+  padding: 15px;
+  border-radius: 3px;
+  display: inline-block;
+  width: 72px;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 26px;
+  font-family: 'Zeyada', cursive;
+}
+
+#clockdiv > .timeBlock + .timeBlock {margin-left: 10px;}
+#clockdiv > .timeBlock {
+  margin:0 5px;
+  width: 100px;
+}

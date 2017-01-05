@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Derek and Haley</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Zeyada" rel="stylesheet">
+
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+  <!-- Bootstrap Optional Theme -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+  <!-- Custom -->
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/carousel.css">
+  <link rel="stylesheet" type="text/css" href="styles/navbar.css">
+  <link rel="stylesheet" type="text/css" href="styles/parallax.css">
+  <link rel="stylesheet" type="text/css" href="styles/clock.css">
+
+</head>
+
+<body>
+
+  <!-- navigation -->
+  <div class="container-fluid subpage">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <!-- mobile toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- links -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#ceremony">Ceremony</a></li>
+          <!-- <li><a href="#date">Date</a></li> -->
+          <li><a href="#story">Story</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#registry">Registry</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- carousel -->
+  <div id="headerCarousel" class="carousel carousel-fade slide" data-ride="carousel">
+  <a name="home" class="anchor"></a>
+    <ol class="carousel-indicators">
+      <li data-target="#headerCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#headerCarousel" data-slide-to="1"></li>
+      <li data-target="#headerCarousel" data-slide-to="2"></li>
+      <li data-target="#headerCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- carousel text -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="slide1"></div>
+        <div class="carousel-caption">
+          <h1>Pretty Text1</h1>
+            <p>Secondary Text</p>
+            <p><a href="#" class="btn btn-primary btn-sm">Dissa Button</a></p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="slide2"></div>
+        <div class="carousel-caption">
+          <h1>Pretty Text2</h1>
+            <p>Secondary Text</p>
+            <p><a href="#" class="btn btn-primary btn-sm">Dissa Button</a></p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="slide3"></div>
+        <div class="carousel-caption">
+          <h1>Pretty Text3</h1>
+            <p>Secondary Text</p>
+            <p><a href="#" class="btn btn-primary btn-sm">Dissa Button</a></p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="slide4"></div>
+        <div class="carousel-caption">
+          <h1>Pretty Text4</h1>
+            <p>Secondary Text</p>
+            <p><a href="#" class="btn btn-primary btn-sm">Dissa Button</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- carousel controls -->
+    <a class="left carousel-control" href="#headerCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#headerCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+
+  <div class="scroll-sm bg-cream" id="clock">
+    <a name="ceremony" class="anchor"></a>
+    <div id="clockdiv">
+      <div class="timeBlock">
+        <span class="days"></span>
+        <div class="smalltext">Days</div>
+      </div>
+      <div class="timeBlock">
+        <span class="hours"></span>
+        <div class="smalltext">Hrs</div>
+      </div>
+      <div class="timeBlock">
+        <span class="minutes"></span>
+        <div class="smalltext">Mins</div>
+      </div>
+      <div class="timeBlock">
+        <span class="seconds"></span>
+        <div class="smalltext">Secs</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax">
+    <a name="story" class="anchor"></a>
+  </div>
+
+  <div class="scroll-md bg-light-gray">
+    <a name="gallery" class="anchor"></a>
+  </div>
+
+  <a name="location" class="anchor"></a>
+  <div id="map"></div>
+
+  <div class="parallax">
+    <a name="registry" class="anchor"></a>
+  </div>
+
+  <div class="scroll-md bg-gray">
+    <a name="rsvp" class="anchor"></a>
+  </div>
+
+
+  <!-- Scripts -->
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- custom -->
+  <script type="text/javascript" src="scripts/navAnimate.js"></script>
+  <script type="text/javascript" src="scripts/smoothAnchor.js"></script>
+  <script type="text/javascript" src="scripts/countdown.js"></script>
+  <script type="text/javascript" src="scripts/mapScripts.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ1vnVD5WmRfM6uXD__IbNBnTjWT2m-gY&libraries=places&callback=initMap"
+    async defer></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+//Variables
+@parallax1: "boquet.jpg";
+@parallax2: "boquet.jpg";
+@parallax3: "boquet.jpg";
+
+
+//Mixins
+
+
+body, html {
+    height: 100%;
+}
+
+.parallax {
+    background-image: url("../images/@{parallax1}");
+
+    height: calc(~"100vh - 75px");
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+.scroll-sm {
+    height: 400px;
+    width: 100%;
+}
+
+.scroll-md {
+    height: 700px;
+    width: 100%;
+}
+
+.scroll-lg {
+    height: 100vh;
+    width: 100%;
+}
