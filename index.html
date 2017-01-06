@@ -24,6 +24,9 @@
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
 
+  <!-- blueimp-gallery -->
+  <link rel="stylesheet" href="blueimp-gallery/css/blueimp-gallery.min.css">
+
   <!-- Custom -->
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" type="text/css" href="styles/carousel.css">
@@ -146,6 +149,35 @@
 
   <div class="scroll-md bg-light-gray">
     <a name="gallery" class="anchor"></a>
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+    <div id="links">
+        <div class="thumb cw">
+        <a href="images/gallery/banana.jpg" title="Banana">
+            <!-- <img src="images/gallery/thumbnails/banana_thumb.jpg" alt="Banana"> -->
+            <img src="https://placehold.it/100x100" alt="Placeholder">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/apple.jpg" title="Apple">
+            <!-- <img src="images/gallery/thumbnails/apple_thumb.jpg" alt="Apple"> -->
+            <img src="https://placehold.it/100x100" alt="Placeholder">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/orange.jpg" title="Orange">
+            <!-- <img src="images/gallery/thumbnails/orange_thumb.jpg" alt="Orange"> -->
+            <img src="https://placehold.it/100x100" alt="Placeholder">
+        </a>
+        </div>
+    </div>
   </div>
 
   <a name="location" class="anchor"></a>
@@ -166,6 +198,18 @@
 
   <!-- Bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- blueimp-gallery -->
+  <script src="blueimp-gallery/js/blueimp-gallery.min.js"></script>
+  <script>
+  document.getElementById('links').onclick = function (event) {
+      event = event || window.event;
+      var target = event.target || event.srcElement,
+          link = target.src ? target.parentNode : target,
+          options = {index: link, event: event},
+          links = this.getElementsByTagName('a');
+      blueimp.Gallery(links, options);
+  };
+  </script>
   <!-- custom -->
   <script type="text/javascript" src="scripts/navAnimate.js"></script>
   <script type="text/javascript" src="scripts/smoothAnchor.js"></script>

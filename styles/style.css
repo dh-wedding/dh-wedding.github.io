@@ -1,3 +1,62 @@
 /*----- anchors -----*/
-body{font-family:arial,sans-serif}.bg-gray{background-color:#272727}.bg-light-gray{background-color:#f1f1f1}.bg-cream{background-color:#fffef1}.bg-white{background-color:#000}a.anchor{display:block;position:relative;top:-75px}#map{height:400px}
-/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
+body {
+  font-family: arial, sans-serif;
+}
+.bg-gray {
+  background-color: #272727;
+}
+.bg-light-gray {
+  background-color: #f1f1f1;
+}
+.bg-cream {
+  background-color: #fffef1;
+}
+.bg-white {
+  background-color: #000000;
+}
+/*----- anchors -----*/
+a.anchor {
+  display: block;
+  position: relative;
+  top: -75px;
+}
+/*----- map -----*/
+#map {
+  height: 400px;
+}
+/*----- custom bootstrap -----*/
+a:hover,
+a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+/*----- gallery thumbnails -----*/
+.thumb {
+  width: 110px;
+  height: 110px;
+  padding: 5px;
+  /*border: 2px solid black;*/
+
+  background-color: #fff;
+  display: inline-block;
+}
+.thumb.cw:hover,
+.thumb.cw > a:hover {
+  -ms-transform: rotate(3deg);
+  /* IE 9 */
+
+  -webkit-transform: rotate(3deg);
+  /* Chrome, Safari, Opera */
+
+  transform: rotate(3deg);
+}
+.thumb.ccw:hover,
+.thumb.ccw > a:hover {
+  -ms-transform: rotate(-3deg);
+  /* IE 9 */
+
+  -webkit-transform: rotate(-3deg);
+  /* Chrome, Safari, Opera */
+
+  transform: rotate(-3deg);
+}

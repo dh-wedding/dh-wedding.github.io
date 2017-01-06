@@ -39,3 +39,35 @@ a.anchor {
 #map {
   height: 400px;
 }
+
+/*----- custom bootstrap -----*/
+a:hover,
+a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*----- gallery thumbnails -----*/
+
+.thumb {
+  width: 110px;
+  height: 110px;
+  padding: 5px;
+  /*border: 2px solid black;*/
+  background-color: #fff;
+  display:inline-block;
+}
+
+.thumb.cw:hover,
+.thumb.cw > a:hover {
+  -ms-transform: rotate(3deg); /* IE 9 */
+  -webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
+  transform: rotate(3deg);
+}
+
+.thumb.ccw:hover,
+.thumb.ccw > a:hover {
+  -ms-transform: rotate(-3deg); /* IE 9 */
+  -webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
+  transform: rotate(-3deg);
+}
