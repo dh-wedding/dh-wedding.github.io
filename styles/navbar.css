@@ -51,9 +51,16 @@
 .navbar {
   background: 0 0;
   border-bottom:0;
-  -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-  -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
-  -ms-transition: background .5s ease-in-out,padding .5s ease-in-out;
+     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+       -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
+      -ms-transition: background .5s ease-in-out,padding .5s ease-in-out;
   -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-  transition: background .5s ease-in-out,padding .5s ease-in-out;
+          transition: background .5s ease-in-out,padding .5s ease-in-out;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }

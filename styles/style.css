@@ -30,24 +30,44 @@ a:focus {
   color: #fff;
   text-decoration: none;
 }
+a:focus,
+a:active {
+  outline: none !important;
+}
+/*----- gallery -----*/
+#links {
+  margin: 0 auto;
+  /*may want to use this for all scroll divs instead of just #links*/
+
+  text-align: center;
+}
 /*----- gallery thumbnails -----*/
 .thumb {
   width: 110px;
   height: 110px;
   padding: 5px;
-  /*border: 2px solid black;*/
-
   background-color: #fff;
   display: inline-block;
 }
+.thumb {
+  -moz-transition: -moz-transform 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out;
+  -ms-transition: -ms-transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
 .thumb.cw:hover,
 .thumb.cw > a:hover {
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   -webkit-transform: rotate(3deg);
   transform: rotate(3deg);
 }
 .thumb.ccw:hover,
 .thumb.ccw > a:hover {
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
   -ms-transform: rotate(-3deg);
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);

@@ -18,12 +18,15 @@ html {
 .scroll-sm {
   height: 400px;
   width: 100%;
+  padding: 15px;
 }
 .scroll-md {
   height: 700px;
   width: 100%;
+  padding: 15px;
 }
 .scroll-lg {
   height: 100vh;
   width: 100%;
+  padding: 15px;
 }
