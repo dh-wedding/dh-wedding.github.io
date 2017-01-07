@@ -9,20 +9,16 @@
 
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Zeyada" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Zeyada|Tangerine|Alegreya" rel="stylesheet">
 
   <!-- Bootstrap -->
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <!-- Bootstrap Optional Theme -->
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Bootstrap-select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
 
   <!-- blueimp-gallery -->
   <link rel="stylesheet" href="blueimp-gallery/css/blueimp-gallery.min.css">
@@ -216,13 +212,74 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h1>R.S.V.P.</h1>
+          <h1 alt="Répondez s'il vous plaît">R.S.V.P.</h1>
         </div>
         <div class="modal-body">
-          <p>paragraph</p>
+
+          <!-- modal-1 -->
+          <div class="mb-1">
+            <p>We hope you can join us!<br />Please enter your name below.</p>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First Name" id="fname">
+              <br />
+              <input type="text" class="form-control" placeholder="Last Name" id="lname">
+            </div>
+          </div>
+          <!-- modal-2 -->
+          <div class="mb-2">
+            <p>Guests on this invitation:</p>
+            <div class="form-group">
+
+
+            
+              <div class="attend-block">
+                <div class="guest-name">
+                Fname Lname
+                </div>
+                <select class="selectpicker">
+                  <option>will</option>
+                  <option>will not</option>
+                </select>
+                <div class="be-attending">
+                  be attending.
+                </div>
+              </div>
+              <div class="attend-block">
+                <div class="guest-name">
+                Fname Lname
+                </div>
+                <select class="selectpicker">
+                  <option>will</option>
+                  <option>will not</option>
+                </select>
+                <div class="be-attending">
+                  be attending.
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+          <!-- modal-3 -->
+          <!-- modal-4 -->
+          <!-- modal-5 -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+
+           <!-- modal-1 -->
+          <div class="mf-1">
+            <button type="button" class="btn btn-default mbtn-1">Find My Invitation</button>
+          </div>
+          <!-- modal-2 -->
+          <div class="mf-2">
+            <button type="button" class="btn btn-default mbtn-2">Next</button>
+          </div>
+          <!-- modal-3 -->
+          <!-- modal-4 -->
+          <!-- modal-5 -->
+
         </div>
       </div>
     </div>
@@ -234,6 +291,10 @@
 
   <!-- Bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap-select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+
   <!-- blueimp-gallery -->
   <script src="blueimp-gallery/js/blueimp-gallery.min.js"></script>
   <script>
@@ -246,11 +307,13 @@
       blueimp.Gallery(links, options);
   };
   </script>
+
   <!-- custom -->
   <script type="text/javascript" src="scripts/navAnimate.js"></script>
   <script type="text/javascript" src="scripts/modalFix.js"></script>
   <script type="text/javascript" src="scripts/smoothAnchor.js"></script>
   <script type="text/javascript" src="scripts/countdown.js"></script>
+  <script type="text/javascript" src="scripts/rsvpModal.js"></script>
   <script type="text/javascript" src="scripts/mapScripts.js"></script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ1vnVD5WmRfM6uXD__IbNBnTjWT2m-gY&libraries=places&callback=initMap"
     async defer></script>
