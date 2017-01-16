@@ -3,11 +3,13 @@
 @gray: #272727;
 @light-gray: #f1f1f1;
 
-@light-cream: #fffffb;
-@cream: #fffef1;
-@dark-cream: #D9D7BF;
+@cream-lighter: #FFFFFF;
+@cream-light:   #FFFFFB;
+@cream:         #FFFEF1;
+@cream-dark:    #D9D7BF;
+@cream-darker:  #B8B58F;
 
-@white: #000;
+@white: #fff;
 
 //Mixins
 
@@ -16,21 +18,16 @@ body {
   font-family: arial, sans-serif;
 }
 
-.bg-gray {
-  background-color: @gray;
-}
+.bg-light-gray { background-color: @light-gray;}
+.bg-gray { background-color: @gray;}
 
-.bg-light-gray {
-  background-color: @light-gray;
-}
+.bg-cream-lighter { background-color: @cream-lighter; }
+.bg-cream-light   { background-color: @cream-light; }
+.bg-cream         { background-color: @cream; }
+.bg-cream-dark    { background-color: @cream-dark; }
+.bg-cream-darker  { background-color: @cream-darker; }
 
-.bg-cream {
-  background-color: @cream;
-}
-
-.bg-white {
-  background-color: @white;
-}
+.bg-white { background-color: @white;}
 
 /*----- anchors -----*/
 a.anchor {
@@ -55,6 +52,8 @@ a:focus,a:active {
    outline: none !important;
 }
 
+/*----- modal -----*/
+
 /*----- rsvp modal -----*/
 
 .modal-content {
@@ -71,79 +70,12 @@ a:focus,a:active {
   text-align: center;
   font-family: 'Tangerine', cursive;
   font-size: 5em;
-  text-shadow: 2px 2px 2px @dark-cream;
+  text-shadow: 2px 2px 2px @cream-dark;
 }
-
-/*----- modal-body -----*/
-.modal-body > .mb-1,
-.modal-body > .mb-2,
-.modal-body > .mb-4, {
-  text-align: center;
-  font-family: 'Alegreya', serif;
-  font-size: 1.3em;
-}
-
-.mb-2,
-.mb-3,
-.mb-4 {
-  display: none;
-}
-
-/*----- modal-body 1 -----*/
-.mb-1 {
-  width: 100%;
-  height: 100%;
-  padding: 10px 50px;
-}
-
-.mb-1 p {
-  margin-bottom: 20px;
-}
-
-/*----- modal-body 2 -----*/
-.attend-block > * {
-  display: inline-block;
-}
-
-.attend-block > .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-  width: 85px;
-}
-
-
-/*----- modal-body 3 -----*/
-
-.modal-body > .mb-3{
-  text-align: justify;
-}
-
-/*----- modal-body 4 -----*/
-
-/*----- modal-footer -----*/
-.modal-footer > .mf-1,
-.modal-footer > .mf-2,
-.modal-footer > .mf-3,
-.modal-footer > .mf-4, {
-  text-align: center;
-}
-
-.mf-2,
-.mf-3,
-.mf-4 {
-  display: none;
-}
-
-/*----- modal-footer 1 -----*/
-
-.mf-1 {
-  width: 100%;
-  height: 100%;
-}
-
-.mf-1 
 
 /*----- form fields -----*/
 .modal .form-control {
-  background-color: @light-cream;
+  background-color: @cream-light;
 }
 
 .modal input {
@@ -153,7 +85,7 @@ a:focus,a:active {
 
 .modal .btn-default {
   background-image: none !important;
-  background-color: @light-cream;
+  background-color: @cream-light;
 }
 
 /*----- gallery -----*/

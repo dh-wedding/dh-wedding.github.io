@@ -2,17 +2,29 @@
 body {
   font-family: arial, sans-serif;
 }
+.bg-light-gray {
+  background-color: #f1f1f1;
+}
 .bg-gray {
   background-color: #272727;
 }
-.bg-light-gray {
-  background-color: #f1f1f1;
+.bg-cream-lighter {
+  background-color: #ffffff;
+}
+.bg-cream-light {
+  background-color: #fffffb;
 }
 .bg-cream {
   background-color: #fffef1;
 }
+.bg-cream-dark {
+  background-color: #d9d7bf;
+}
+.bg-cream-darker {
+  background-color: #b8b58f;
+}
 .bg-white {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 /*----- anchors -----*/
 a.anchor {
@@ -34,6 +46,7 @@ a:focus,
 a:active {
   outline: none !important;
 }
+/*----- modal -----*/
 /*----- rsvp modal -----*/
 .modal-content {
   background-color: #fffef1;
@@ -50,57 +63,6 @@ a:active {
   font-family: 'Tangerine', cursive;
   font-size: 5em;
   text-shadow: 2px 2px 2px #d9d7bf;
-}
-/*----- modal-body -----*/
-.modal-body > .mb-1,
-.modal-body > .mb-2,
-.modal-body > .mb-4 {
-  text-align: center;
-  font-family: 'Alegreya', serif;
-  font-size: 1.3em;
-}
-.mb-2,
-.mb-3,
-.mb-4 {
-  display: none;
-}
-/*----- modal-body 1 -----*/
-.mb-1 {
-  width: 100%;
-  height: 100%;
-  padding: 10px 50px;
-}
-.mb-1 p {
-  margin-bottom: 20px;
-}
-/*----- modal-body 2 -----*/
-.attend-block > * {
-  display: inline-block;
-}
-.attend-block > .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-  width: 85px;
-}
-/*----- modal-body 3 -----*/
-.modal-body > .mb-3 {
-  text-align: justify;
-}
-/*----- modal-body 4 -----*/
-/*----- modal-footer -----*/
-.modal-footer > .mf-1,
-.modal-footer > .mf-2,
-.modal-footer > .mf-3,
-.modal-footer > .mf-4 {
-  text-align: center;
-}
-.mf-2,
-.mf-3,
-.mf-4 {
-  display: none;
-}
-/*----- modal-footer 1 -----*/
-.mf-1 {
-  width: 100%;
-  height: 100%;
 }
 /*----- form fields -----*/
 .modal .form-control {

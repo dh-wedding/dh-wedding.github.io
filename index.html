@@ -9,7 +9,7 @@
 
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Zeyada|Tangerine|Alegreya" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Zeyada|Tangerine|Alegreya|Alegreya:700" rel="stylesheet">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -23,12 +23,17 @@
   <!-- blueimp-gallery -->
   <link rel="stylesheet" href="blueimp-gallery/css/blueimp-gallery.min.css">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Custom -->
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" type="text/css" href="styles/carousel.css">
   <link rel="stylesheet" type="text/css" href="styles/navbar.css">
   <link rel="stylesheet" type="text/css" href="styles/parallax.css">
   <link rel="stylesheet" type="text/css" href="styles/clock.css">
+  <link rel="stylesheet" type="text/css" href="styles/modal.css">
+  <link rel="stylesheet" type="text/css" href="styles/checkbox.css">
 
 </head>
 
@@ -62,9 +67,9 @@
     </nav>
   </div>
 
+  <a name="home" class="anchor"></a>
   <!-- carousel -->
   <div id="headerCarousel" class="carousel carousel-fade slide" data-ride="carousel">
-  <a name="home" class="anchor"></a>
     <ol class="carousel-indicators">
       <li data-target="#headerCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#headerCarousel" data-slide-to="1"></li>
@@ -75,7 +80,9 @@
     <!-- carousel text -->
     <div class="carousel-inner">
       <div class="item active">
-        <div class="slide1"></div>
+        <div class="slide1">
+          <div class="carousel-overlay"></div>
+        </div>
         <div class="carousel-caption">
           <h1>Pretty Text1</h1>
             <p>Secondary Text</p>
@@ -83,7 +90,9 @@
         </div>
       </div>
       <div class="item">
-        <div class="slide2"></div>
+        <div class="slide2">
+          <div class="carousel-overlay"></div>
+        </div>
         <div class="carousel-caption">
           <h1>Pretty Text2</h1>
             <p>Secondary Text</p>
@@ -91,7 +100,9 @@
         </div>
       </div>
       <div class="item">
-        <div class="slide3"></div>
+        <div class="slide3">
+          <div class="carousel-overlay"></div>
+        </div>
         <div class="carousel-caption">
           <h1>Pretty Text3</h1>
             <p>Secondary Text</p>
@@ -99,7 +110,9 @@
         </div>
       </div>
       <div class="item">
-        <div class="slide4"></div>
+        <div class="slide4">
+          <div class="carousel-overlay"></div>
+        </div>
         <div class="carousel-caption">
           <h1>Pretty Text4</h1>
             <p>Secondary Text</p>
@@ -109,11 +122,11 @@
     </div>
 
     <!-- carousel controls -->
-    <a class="left carousel-control" href="#headerCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
+    <a class="left carousel-control" data-target="#headerCarousel" data-slide="prev">
+      <i class="fa fa-angle-left"></i>
     </a>
-    <a class="right carousel-control" href="#headerCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
+    <a class="right carousel-control" data-target="#headerCarousel" data-slide="next">
+      <i class="fa fa-angle-right"></i>
     </a>
   </div>
 
@@ -139,12 +152,11 @@
     </div>
   </div>
 
-  <div class="parallax">
-    <a name="story" class="anchor"></a>
-  </div>
+  <a name="story" class="anchor"></a>
+  <div class="parallax"></div>
 
+  <a name="gallery" class="anchor"></a>
   <div class="scroll-md bg-light-gray">
-    <a name="gallery" class="anchor"></a>
     <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
         <div class="slides"></div>
         <h3 class="title"></h3>
@@ -155,40 +167,175 @@
         <ol class="indicator"></ol>
     </div>
     <div id="links">
+    <!-- <img src="https://placehold.it/100x100" alt="Placeholder"> -->
         <div class="thumb cw">
-        <a href="images/gallery/banana.jpg" title="Banana">
-            <!-- <img src="images/gallery/thumbnails/banana_thumb.jpg" alt="Banana"> -->
-            <img src="https://placehold.it/100x100" alt="Placeholder">
+        <a href="images/gallery/photos/1.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_1.jpg" alt="">
         </a>
         </div>
         <div class="thumb ccw">
-        <a href="images/gallery/apple.jpg" title="Apple">
-            <!-- <img src="images/gallery/thumbnails/apple_thumb.jpg" alt="Apple"> -->
-            <img src="https://placehold.it/100x100" alt="Placeholder">
+        <a href="images/gallery/photos/2.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_2.jpg" alt="">
         </a>
         </div>
         <div class="thumb cw">
-        <a href="images/gallery/orange.jpg" title="Orange">
-            <!-- <img src="images/gallery/thumbnails/orange_thumb.jpg" alt="Orange"> -->
-            <img src="https://placehold.it/100x100" alt="Placeholder">
+        <a href="images/gallery/photos/3.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_3.jpg" alt="">
         </a>
         </div>
         <div class="thumb cw">
-        <a href="images/gallery/banana.jpg" title="Banana">
-            <!-- <img src="images/gallery/thumbnails/banana_thumb.jpg" alt="Banana"> -->
-            <img src="https://placehold.it/100x100" alt="Placeholder">
+        <a href="images/gallery/photos/4.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_4.jpg" alt="">
         </a>
         </div>
         <div class="thumb ccw">
-        <a href="images/gallery/apple.jpg" title="Apple">
-            <!-- <img src="images/gallery/thumbnails/apple_thumb.jpg" alt="Apple"> -->
-            <img src="https://placehold.it/100x100" alt="Placeholder">
+        <a href="images/gallery/photos/5.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_5.jpg" alt="">
         </a>
         </div>
         <div class="thumb cw">
-        <a href="images/gallery/orange.jpg" title="Orange">
-            <!-- <img src="images/gallery/thumbnails/orange_thumb.jpg" alt="Orange"> -->
-            <img src="https://placehold.it/100x100" alt="Placeholder">
+        <a href="images/gallery/photos/6.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_6.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/7.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_7.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/8.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_8.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/9.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_9.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/10.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_10.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/11.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_11.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/12.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_12.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/13.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_13.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/14.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_14.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/15.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_15.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/16.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_16.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/17.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_17.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/18.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_18.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/19.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_19.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/20.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_20.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/21.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_21.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/22.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_22.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/23.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_23.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/24.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_24.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/25.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_25.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/26.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_26.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/27.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_27.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/28.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_28.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/29.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_29.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/30.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_30.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/31.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_31.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb ccw">
+        <a href="images/gallery/photos/32.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_32.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/33.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_33.jpg" alt="">
+        </a>
+        </div>
+        <div class="thumb cw">
+        <a href="images/gallery/photos/34.jpg" title="">
+            <img src="images/gallery/thumbs/thumb_34.jpg" alt="">
         </a>
         </div>
     </div>
@@ -197,20 +344,29 @@
   <a name="location" class="anchor"></a>
   <div id="map"></div>
 
+  <a name="registry" class="anchor"></a>
   <div class="parallax">
-    <a name="registry" class="anchor"></a>
   </div>
 
-  <div class="scroll-md bg-gray">
-  </div>
+<!--   <div class="scroll-md bg-gray">
+  </div> -->
+  
+  <div class="scroll-sm bg-cream-lighter"></div>
+  <div class="scroll-sm bg-cream-light"></div>
+  <div class="scroll-sm bg-cream"></div>
+  <div class="scroll-sm bg-cream-dark"></div>
+  <div class="scroll-sm bg-cream-darker"></div>
 
   <!-- rsvp modal -->
   <div class="modal fade" id="rsvpModal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
+          <button type="button" class="back" aria-label="Back">
+            <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+          </button>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <span><i class="fa fa-times" aria-hidden="true"></i></span>
           </button>
           <h1 alt="Répondez s'il vous plaît">R.S.V.P.</h1>
         </div>
@@ -220,48 +376,104 @@
           <div class="mb-1">
             <p>We hope you can join us!<br />Please enter your name below.</p>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="First Name" id="fname">
+              <input type="text" class="form-control" placeholder="First Name" id="fname" />
               <br />
-              <input type="text" class="form-control" placeholder="Last Name" id="lname">
+              <input type="text" class="form-control" placeholder="Last Name" id="lname" />
+            </div>
+            <div class="searching">
+              <img src="images/magnify.svg" alt="searching"/>
+              <div class="search-msg">
+                Searching
+              </div>
+            </div>
+            <div class="notFound">
+             Sorry, we couldn't find a guest with that name.
             </div>
           </div>
           <!-- modal-2 -->
           <div class="mb-2">
             <p>Guests on this invitation:</p>
-            <div class="form-group">
-
-
-            
-              <div class="attend-block">
-                <div class="guest-name">
-                Fname Lname
-                </div>
-                <select class="selectpicker">
-                  <option>will</option>
-                  <option>will not</option>
-                </select>
-                <div class="be-attending">
-                  be attending.
-                </div>
+            <div class="form-group" id="attend-form"></div>
+            <div id="add-guests">
+              <p>Additional Guests? </p>
+              <div class="checkbox">
+                  <label style="font-size: 1.25em">
+                      <input id="chkbx" type="checkbox" value="" unchecked />
+                      <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                  </label>
               </div>
-              <div class="attend-block">
-                <div class="guest-name">
-                Fname Lname
-                </div>
-                <select class="selectpicker">
-                  <option>will</option>
-                  <option>will not</option>
-                </select>
-                <div class="be-attending">
-                  be attending.
-                </div>
+              <br />
+              <div id="add-numbers">
+                <div id="ill_well">Poop</div>
+                <div>be bringing</div>
+                <select class="selectpicker" id="add-adults">
+                   <option>0</option>
+                   <option>1</option>
+                   <option>2</option>
+                 </select>
+                 <div id="add-adults-label">adults</div>
+                 <div>and</div>
+                 <select class="selectpicker" id="add-children">
+                   <option>0</option>
+                   <option>1</option>
+                   <option>2</option>
+                   <option>3</option>
+                   <option>4</option>
+                   <option>5</option>
+                 </select>
+                 <div id="add-children-label">children.</div>
               </div>
-
-
-
             </div>
           </div>
           <!-- modal-3 -->
+          <div class="mb-3">
+            <p id="confirmMsg">Please confirm your details before submitting.</p>
+            <div class="row">
+
+              <div id="guest_s" class="col-md-6"><b>Guest(s)</b></div> <!--Guest(s)-->
+
+              <div class="col-md-6 text-right"><b>Count</b></div>
+            </div>
+
+            <!-- <div id="attendingInvitees"></div> -->
+
+            <div class="row">
+              <div class="col-md-6 invitee">Derek Kidd</div>
+              <div class="col-md-6 text-right count">1</div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 invitee">Haley Garner</div>
+              <div class="col-md-6 text-right count">1</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 add-guests-label"><b>Additional Guests</b></div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 add-guests">Adults</div>
+              <div class="col-md-6 text-right count">1</div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 add-guests">Children</div>
+              <div class="col-md-6 text-right count">2</div>
+            </div>
+          
+            <hr />
+
+            <div class="row">
+              <div class="col-md-6"><b>Total Attending</b></div>
+              <div class="col-md-6 text-right count"><b>5</b></div>
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" rows="3" id="note" placeholder="Send a note to the couple (optional)"></textarea>
+<!--               <br />
+              <input type="text" class="form-control" placeholder="Email Address (optional)" id="email" /> -->
+            </div>
+
+
+          </div>
+
           <!-- modal-4 -->
           <!-- modal-5 -->
         </div>
@@ -277,6 +489,9 @@
             <button type="button" class="btn btn-default mbtn-2">Next</button>
           </div>
           <!-- modal-3 -->
+          <div class="mf-3">
+            <button type="button" class="btn btn-default mbtn-3">Send RSVP</button>
+          </div>
           <!-- modal-4 -->
           <!-- modal-5 -->
 
