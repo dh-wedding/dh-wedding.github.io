@@ -16,6 +16,8 @@ $(".mbtn-1").click(function(){
 });
 
 var numInvitees = 0;
+var inviteeNames = [];
+var inviteeResponses = [];
 
 function getInvitees() {
   var fname = $("#fname")[0].value;
@@ -28,7 +30,7 @@ function getInvitees() {
                    "<div class=\"guest-name\">";
       var ab_2 =   "</div>" +
                    "<select class=\"selectpicker will\" id=\"attendingSelect_";
-      var ab_3 =                                                                     "\">" +
+      var ab_3 =                                                              "\">" +
                      "<option>will</option>" +
                      "<option>will not</option>" +
                    "</select>" +
@@ -39,11 +41,15 @@ function getInvitees() {
       var data_obj = JSON.parse(data);
       for (var i = 0; i < data_obj.length ;i++) {
         $("#attend-form").append(ab_1 + data_obj[i].fname + " " + data_obj[i].lname + "&nbsp;" + ab_2 + i + ab_3);
+        inviteeNames.push(data_obj[i].fname + " " + data_obj[i].lname);
       }
       $('.selectpicker').selectpicker('refresh');
       numInvitees = data_obj.length;
       if (numInvitees < 2) {
         wellToIll();
+      }
+      else {
+        illToWell();
       }
       buildAttendingWatches();
       hideSearch_success();
@@ -90,7 +96,7 @@ function showSearch() {
 
 function hideSearch_success() {
   $('.searching').fadeOut("slow", function(){
-    $('.searching').hide(showModal2());
+    $('.searching').hide(showModal2(1));
   });
 }
 
@@ -104,21 +110,109 @@ $('.searching').fadeOut("slow", function(){
   });
 }
 
-function showModal2() {
+function showModal1() {
   $('.modal-body').fadeOut("slow", function(){
-    $('.mb-1').hide();
+    $('.mb-2').hide(function() {
+      clearAllModalFields();
+    });
     $('.modal-body').fadeIn("slow");
-    $('.mb-2').show();
-    showBackButton();
+    $('.mb-1').show();
+    hideBackButton();
   });
   $('.modal-footer').fadeOut("slow", function(){
-    $('.mf-1').hide();
+    $('.mf-2').hide();
     $('.modal-footer').fadeIn("slow");
-    $('.mf-2').show();
+    $('.mf-1').show();
   });
 }
 
+function showModal2(prevModal) {
+  if (prevModal == 1) {
+    $('.modal-body').fadeOut("slow", function(){
+      $('.mb-1').hide();
+      $('.modal-body').fadeIn("slow");
+      $('.mb-2').show();
+      setupBackButton(2);
+      showBackButton();
+    });
+    $('.modal-footer').fadeOut("slow", function(){
+      $('.mf-1').hide();
+      $('.modal-footer').fadeIn("slow");
+      $('.mf-2').show();
+    });
+  }
+  else if (prevModal == 3) {
+    $('.modal-body').fadeOut("slow", function(){
+      $('.mb-3').hide();
+      $('.modal-body').fadeIn("slow");
+      $('.mb-2').show();
+      setupBackButton(2);
+    });
+    $('.modal-footer').fadeOut("slow", function(){
+      $('.mf-3').hide();
+      $('.modal-footer').fadeIn("slow");
+      $('.mf-2').show();
+    });
+  }
+}
+
 //----- modal 2 -----//
+function setupBackButton(modalNumber) {
+  $('.modal .back').off("click");
+  if (modalNumber == 2) {
+    $('.modal .back').click(function() {
+      showModal1();
+      clearModal1();                   //if this starts looking buggy, move this call to the showBackButton's show callback
+    });
+  }
+  else if (modalNumber == 3) {
+    $('.modal .back').click(function() {
+      showModal2(3);
+      clearModal3();
+    });
+  }
+}
+
+function clearAllModalFields() {
+  resetGlobals();
+  clearModal1();
+  clearModal2();
+  clearModal3();
+}
+
+function resetGlobals() {
+  numInvitees = 0;
+  inviteeNames = [];
+  inviteeResponses = [];
+}
+
+function clearModal1() {
+  $("#fname").val("");
+  $("#lname").val("");
+  $('.notFound').hide();
+  $('.searching').hide();
+
+}
+
+function clearModal2() {
+  $("#attend-form").empty();
+  $("#chkbx").prop('checked', false);
+  checkboxHandler();
+}
+
+function clearModal3() {
+  setTimeout(function(){
+    $("#attendingInvitees").empty();
+    $(".inviteesWillAttend").hide();
+    $(".inviteesWillNotAttend").hide();
+    //not finished
+      //need to reset
+    $("#addAdultsCount").html(0);
+    $("#addChildrenCount").html(0);
+    //reset total
+        //note text area
+  }, 650);                                       //safest-looking timeout
+}
 
 function showBackButton() {
   $('.modal .back').fadeIn("slow", function() {
@@ -148,32 +242,29 @@ function illToWell() {
   });
 }
 
-inviteeResponses = [];                                  //this is global
-
-
 function buildAttendingWatches() {
   $('.will .selectpicker').each(function() {
       inviteeResponses.push($(this).val());
   });
 
   $('.will .selectpicker').on('change', function(){
-    if (inviteeResponses.length > 0) {
-      inviteeResponses = [];
+    if (inviteeResponses.length > 0) {                          //check to see if invitee responses has been filled before
+      inviteeResponses = [];                                    //clear invitee responses
       $('.will .selectpicker').each(function() {
         inviteeResponses.push($(this).val());
       });
       willArray = checkInviteeResponses();
-      if (!willArray[0]) {                               //all responses are "will not"
+      if (!willArray[0]) {                                      //all responses are "will not"
         $("#chkbx").prop('checked', false);
-        checkboxHandler();                               //// created this handler to take care of hiding add-numbers
+        checkboxHandler();                                      //// created this handler to take care of hiding add-numbers
         $("#chkbx").prop('disabled', true);
       }
-      else {                                             //at least one response is "will"
+      else {                                                    //at least one response is "will"
         $("#chkbx").prop('disabled', false);
-        if (willArray[1] == numInvitees - 1) {           //only one invitee said "will"
+        if ((numInvitees - willArray[1]) == numInvitees - 1) {  //only one invitee said "will" //when numInvitees > 1
           wellToIll();
         }
-        else {                                           //more than one response is "will"
+        else {                                                  //more than one response is "will"
           illToWell();
         }
       }
@@ -192,6 +283,11 @@ function checkInviteeResponses() {
   }
   return [willTrip, willCount];
 }
+
+function checkAddGuestsCount() {
+  return [parseInt($('select#add-adults').val()), parseInt($('select#add-children').val())];
+}
+
 
 // $('#chkbx').prop("checked", $('#chkbx').prop("checked")).change(function(){}); //true checkbox onchange event
 
@@ -264,21 +360,81 @@ $("#add-children").change(function(){
 //Next button
 $('.mbtn-2').click(function (e){
     e.preventDefault();
-    $('.modal-body').fadeOut("slow", function(){
-        $('.mb-2').hide();
-        $('.modal-body').fadeIn("slow");
-        $('.mb-3').show();
-    });
-    $('.modal-footer').fadeOut("slow", function(){
-        $('.mf-2').hide();
-        $('.modal-footer').fadeIn("slow");
-        $('.mf-3').show();
-    });
+    setupInviteeBlock();
+    setupAddGuestsCount();
+    setupTotalAttending();
 });
+
+
+function showModal3() {
+  $('.modal-body').fadeOut("slow", function(){
+    $('.mb-2').hide();
+    $('.modal-body').fadeIn("slow");
+    $('.mb-3').show();
+    setupBackButton(3);
+  });
+  $('.modal-footer').fadeOut("slow", function(){
+    $('.mf-2').hide();
+    $('.modal-footer').fadeIn("slow");
+    $('.mf-3').show();
+  });
+}
 
 //----- modal 3 -----//
 
 
+function setupInviteeBlock() {
+  if ($.inArray("will", inviteeResponses) != -1) {
+    $(".inviteesWillAttend").show();
+    var ib_1 = "<div class=\"row\">" +
+                 "<div class=\"col-md-6 invitee\">";
+    var ib_2 =                                     "</div>" +
+                 "<div class=\"col-md-6 text-right count\">";
+    var ib_3 =                                              "</div>" +
+               "</div>";
+
+    for (var i = 0; i < inviteeResponses.length ;i++) {
+      if (inviteeResponses[i] == "will") {
+        $("#attendingInvitees").append(ib_1 + inviteeNames[i] + ib_2 + 1 + ib_3);
+      }
+    }
+  }
+  else {
+    $(".inviteesWillNotAttend").show();
+  }
+  showModal3();
+}
+
+function setupAddGuestsCount() {
+  if ($("#chkbx").prop('checked') == true) {
+    $("#addAdultsCount").html($('select#add-adults').val());
+    $("#addChildrenCount").html($('select#add-children').val());
+  }
+}
+
+function setupTotalAttending() {
+  $("#totalAttending").html(getTotalAttending());
+}
+
+function getTotalAttending() {
+  return parseInt(checkInviteeResponses()[1]) + checkAddGuestsCount().reduce( ( prev, cur ) => prev + cur );
+}
+
+function sendRSVP(){
+  var rsvp = {
+    inviteeNames: inviteeNames,
+    addAdults: checkAddGuestsCount()[0],
+    addChildren: checkAddGuestsCount()[1],
+    total: getTotalAttending(),
+    note: $('#note').val()
+  }
+  // console.log(rsvp);
+}
+
+$('.mbtn-3').click(function (e){
+    e.preventDefault();
+    sendRSVP();
+});
 
 // $('.mbtn-1').click(function (e){
 //     e.preventDefault();
@@ -293,3 +449,9 @@ $('.mbtn-2').click(function (e){
 //         $('.mf-2').show();
 //     });
 // });
+
+
+
+
+
+

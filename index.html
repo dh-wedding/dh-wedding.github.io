@@ -67,7 +67,7 @@
     </nav>
   </div>
 
-  <a name="home" class="anchor"></a>
+  <a id="home" name="home" class="anchor"></a>
   <!-- carousel -->
   <div id="headerCarousel" class="carousel carousel-fade slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -130,7 +130,7 @@
     </a>
   </div>
 
-  <a name="ceremony" class="anchor"></a>
+  <a id="ceremony" name="ceremony" class="anchor"></a>
   <div class="scroll-sm bg-cream" id="clock">
     <div id="clockdiv">
       <div class="timeBlock">
@@ -152,10 +152,10 @@
     </div>
   </div>
 
-  <a name="story" class="anchor"></a>
+  <a id="story" name="story" class="anchor"></a>
   <div class="parallax"></div>
 
-  <a name="gallery" class="anchor"></a>
+  <a id="gallery" name="gallery" class="anchor"></a>
   <div class="scroll-md bg-light-gray">
     <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
         <div class="slides"></div>
@@ -341,21 +341,27 @@
     </div>
   </div>
 
-  <a name="location" class="anchor"></a>
+  <a id="location" name="location" class="anchor"></a>
   <div id="map"></div>
 
-  <a name="registry" class="anchor"></a>
+  <a id="registry" name="registry" class="anchor"></a>
   <div class="parallax">
   </div>
 
-<!--   <div class="scroll-md bg-gray">
-  </div> -->
-  
   <div class="scroll-sm bg-cream-lighter"></div>
   <div class="scroll-sm bg-cream-light"></div>
   <div class="scroll-sm bg-cream"></div>
   <div class="scroll-sm bg-cream-dark"></div>
-  <div class="scroll-sm bg-cream-darker"></div>
+  <div class="scroll-sm bg-cream-darker">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 amazon"></div>
+      <div class="col-md-6 col-sm-6 bed-bath-beyond"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 belk"></div>
+      <div class="col-md-6 col-sm-6 target"></div>
+    </div>
+  </div>
 
   <!-- rsvp modal -->
   <div class="modal fade" id="rsvpModal">
@@ -397,84 +403,72 @@
             <div id="add-guests">
               <p>Additional Guests? </p>
               <div class="checkbox">
-                  <label style="font-size: 1.25em">
-                      <input id="chkbx" type="checkbox" value="" unchecked />
-                      <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                  </label>
+                <label style="font-size: 1.25em">
+                  <input id="chkbx" type="checkbox" value="" unchecked />
+                  <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                </label>
               </div>
               <br />
               <div id="add-numbers">
-                <div id="ill_well">Poop</div>
+                <div id="ill_well">We'll</div>
                 <div>be bringing</div>
                 <select class="selectpicker" id="add-adults">
-                   <option>0</option>
-                   <option>1</option>
-                   <option>2</option>
-                 </select>
-                 <div id="add-adults-label">adults</div>
-                 <div>and</div>
-                 <select class="selectpicker" id="add-children">
-                   <option>0</option>
-                   <option>1</option>
-                   <option>2</option>
-                   <option>3</option>
-                   <option>4</option>
-                   <option>5</option>
-                 </select>
-                 <div id="add-children-label">children.</div>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+                <div id="add-adults-label">adults</div>
+                <div>and</div>
+                <select class="selectpicker" id="add-children">
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                <div id="add-children-label">children.</div>
               </div>
             </div>
           </div>
           <!-- modal-3 -->
           <div class="mb-3">
-            <p id="confirmMsg">Please confirm your details before submitting.</p>
-            <div class="row">
+            <div class="inviteesWillAttend">
+              <p id="confirmMsg">Please confirm your details before submitting.</p>
+              <div class="row">
+                <div id="guest_s" class="col-md-6"><b>Guest(s)</b></div>
+                <div class="col-md-6 text-right"><b>Count</b></div>
+              </div>
+              <div id="attendingInvitees"></div>
+              <div class="row">
+                <div class="col-md-6 add-guests-label"><b>Additional Guests</b></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 add-guests">Adults</div>
+                <div id="addAdultsCount" class="col-md-6 text-right count">0</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 add-guests">Children</div>
+                <div id="addChildrenCount" class="col-md-6 text-right count">0</div>
+              </div>
 
-              <div id="guest_s" class="col-md-6"><b>Guest(s)</b></div> <!--Guest(s)-->
+              <hr />
 
-              <div class="col-md-6 text-right"><b>Count</b></div>
+              <div class="row">
+                <div class="col-md-6"><b>Total Attending</b></div>
+                <div id="totalAttending" class="col-md-6 text-right count"><b>5</b></div>
+              </div>
             </div>
-
-            <!-- <div id="attendingInvitees"></div> -->
-
-            <div class="row">
-              <div class="col-md-6 invitee">Derek Kidd</div>
-              <div class="col-md-6 text-right count">1</div>
+            <div class="inviteesWillNotAttend">
+              <p id="cantAttendMsg">We're sorry you can't make it.</p>
             </div>
-            <div class="row">
-              <div class="col-md-6 invitee">Haley Garner</div>
-              <div class="col-md-6 text-right count">1</div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 add-guests-label"><b>Additional Guests</b></div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 add-guests">Adults</div>
-              <div class="col-md-6 text-right count">1</div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 add-guests">Children</div>
-              <div class="col-md-6 text-right count">2</div>
-            </div>
-          
-            <hr />
-
-            <div class="row">
-              <div class="col-md-6"><b>Total Attending</b></div>
-              <div class="col-md-6 text-right count"><b>5</b></div>
-            </div>
-
             <div class="form-group">
               <textarea class="form-control" rows="3" id="note" placeholder="Send a note to the couple (optional)"></textarea>
-<!--               <br />
-              <input type="text" class="form-control" placeholder="Email Address (optional)" id="email" /> -->
             </div>
-
-
           </div>
 
           <!-- modal-4 -->
+          <!-- <input type="text" class="form-control" placeholder="Email Address (optional)" id="email" /> -->
           <!-- modal-5 -->
         </div>
         <div class="modal-footer">
