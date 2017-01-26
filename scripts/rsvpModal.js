@@ -178,6 +178,7 @@ function clearAllModalFields() {
   clearModal1();
   clearModal2();
   clearModal3();
+  clearModal4();
 }
 
 function resetGlobals() {
@@ -205,13 +206,14 @@ function clearModal3() {
     $("#attendingInvitees").empty();
     $(".inviteesWillAttend").hide();
     $(".inviteesWillNotAttend").hide();
-    //not finished
-      //need to reset
     $("#addAdultsCount").html(0);
     $("#addChildrenCount").html(0);
-    //reset total
-        //note text area
+    $("#note").val("");
   }, 650);                                       //safest-looking timeout
+}
+
+function clearModal4() {
+  $("#email").val("");
 }
 
 function showBackButton() {
@@ -387,9 +389,9 @@ function setupInviteeBlock() {
   if ($.inArray("will", inviteeResponses) != -1) {
     $(".inviteesWillAttend").show();
     var ib_1 = "<div class=\"row\">" +
-                 "<div class=\"col-md-6 invitee\">";
+                 "<div class=\"col-md-6 col-sm-6 col-xs-6 invitee\">";
     var ib_2 =                                     "</div>" +
-                 "<div class=\"col-md-6 text-right count\">";
+                 "<div class=\"col-md-6 col-sm-6 col-xs-6 text-right count\">";
     var ib_3 =                                              "</div>" +
                "</div>";
 
@@ -429,12 +431,50 @@ function sendRSVP(){
     note: $('#note').val()
   }
   // console.log(rsvp);
+  showModal4();
 }
 
 $('.mbtn-3').click(function (e){
     e.preventDefault();
     sendRSVP();
 });
+
+//----- modal 4 -----//
+
+function showModal4() {
+  $('.modal-body').fadeOut("slow", function(){
+    $('.mb-3').hide();
+    $('.modal-body').fadeIn("slow");
+    $('.mb-4').show();
+    hideBackButton();
+  });
+  $('.modal-footer').fadeOut("slow", function(){
+    $('.mf-3').hide();
+    $('.modal-footer').fadeIn("slow");
+    $('.mf-4').show();
+  });
+}
+
+
+//----- close modal -----//
+
+function resetModal() {
+    $('.mb-2').hide();
+    $('.mf-2').hide();
+    $('.mb-3').hide();
+    $('.mf-3').hide();
+    $('.mb-4').hide();
+    $('.mf-4').hide();
+    //need to add in modal 4 and 5
+}
+
+$('#rsvpModal').on('hidden.bs.modal', function (e) {
+  resetModal();
+  showModal1();
+});
+
+
+
 
 // $('.mbtn-1').click(function (e){
 //     e.preventDefault();
@@ -449,9 +489,3 @@ $('.mbtn-3').click(function (e){
 //         $('.mf-2').show();
 //     });
 // });
-
-
-
-
-
-

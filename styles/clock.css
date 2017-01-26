@@ -1,54 +1,79 @@
-/*body{
-    text-align: center;
-    background: #00ECB9;
-  font-family: sans-serif;
-  font-weight: 100;
-}*/
-
 #clock {
   text-align: center;
   display: table;
-  
+  width: 100%;
+  height: 100%;
 }
 
 #clockdiv{
   margin:auto 0px;
   font-family: 'Montserrat', sans-serif;
-  /*color: #CBD4C2;*/
-  /*color: #40C9A2;*/
-  color: #FF6F5E;
+  color: #B8B58F;
+  /*color: #A8A4AD; complementary color of cream*/
+  /*color: #FF6F5E;*/
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: bottom;
   font-weight: 100;
   text-align: center;
   font-size: 30px;
-  height: inherit; /*inherits height from scrolling divs*/
+  height: inherit;
+  width: 100%;
+/*  border: 1px solid #f0f;*/
+  /*text-shadow: 1px 1px 1px #B8B58F;*/
 }
 
-/*----- outer -----*/
-#clockdiv > div{
+#clockdiv div .number{
   padding: 10px;
-  display: inline-block;
-  /*border: 2px solid black;*/
-  /*background-color: rgba(0,0,0,.75);*/
-}
-
-/*----- inner -----*/
-#clockdiv div > span{
-  padding: 15px;
   border-radius: 3px;
   display: inline-block;
-  width: 72px;
+  width: 60px;
+  height: 60px;
 }
 
 .smalltext{
-  padding-top: 5px;
   font-size: 26px;
   font-family: 'Zeyada', cursive;
+  width: 64px;
+  height: 40px;
+  display: inline-block;
 }
 
-#clockdiv > .timeBlock + .timeBlock {margin-left: 10px;}
-#clockdiv > .timeBlock {
-  margin:0 5px;
-  width: 100px;
+#clockdiv .timeBlock + .timeBlock {
+  /*margin-left: -8px;*/
+  /*border-left: 1px solid #B8B58F;*/
+}
+#clockdiv .timeBlock {
+  padding: 10px;
+  width: 125px;
+  height: 125px;
+  display: inline-block;
+  background-color: #FFFFFF;
+  /*background-color: rgba(0,0,0,.75);*/
+}
+
+#clockBreak{
+  display: none;
+  height:10px;
+}
+
+@media screen and (max-width: 1024px) {
+    #clockBreak {
+        display: block;
+    }
+}
+
+#clockHolder {
+  padding: 10px;
+  background-color: #FFFEF1;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.box-shadow { box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+                          0 1px 5px 0 rgba(0,0,0,0.12),
+                          0 3px 1px -2px rgba(0,0,0,0.2);
 }

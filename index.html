@@ -61,7 +61,7 @@
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#location">Location</a></li>
           <li><a href="#registry">Registry</a></li>
-          <li><a href="" data-toggle="modal" data-target="#rsvpModal">RSVP</a></li>
+          <li><a href="" data-toggle="modal" data-target="#rsvpModal">R.S.V.P.</a></li>
         </ul>
       </div>
     </nav>
@@ -79,45 +79,23 @@
 
     <!-- carousel text -->
     <div class="carousel-inner">
+    <div class="carousel-overlay">
+      <div class="center-vertically">
+        <h1>Derek & Haley</h1>
+        <p>April 29, 2017</p>
+      </div>
+    </div>
       <div class="item active">
-        <div class="slide1">
-          <div class="carousel-overlay"></div>
-        </div>
-        <div class="carousel-caption">
-          <h1>Pretty Text1</h1>
-            <p>Secondary Text</p>
-            <p><a href="#" class="btn btn-primary btn-sm">Dissa Button</a></p>
-        </div>
+        <div class="slide1"></div>
       </div>
       <div class="item">
-        <div class="slide2">
-          <div class="carousel-overlay"></div>
-        </div>
-        <div class="carousel-caption">
-          <h1>Pretty Text2</h1>
-            <p>Secondary Text</p>
-            <p><a href="#" class="btn btn-primary btn-sm">Dissa Button</a></p>
-        </div>
+        <div class="slide2"></div>
       </div>
       <div class="item">
-        <div class="slide3">
-          <div class="carousel-overlay"></div>
-        </div>
-        <div class="carousel-caption">
-          <h1>Pretty Text3</h1>
-            <p>Secondary Text</p>
-            <p><a href="#" class="btn btn-primary btn-sm">Dissa Button</a></p>
-        </div>
+        <div class="slide3"></div>
       </div>
       <div class="item">
-        <div class="slide4">
-          <div class="carousel-overlay"></div>
-        </div>
-        <div class="carousel-caption">
-          <h1>Pretty Text4</h1>
-            <p>Secondary Text</p>
-            <p><a href="#" class="btn btn-primary btn-sm">Dissa Button</a></p>
-        </div>
+        <div class="slide4"></div>
       </div>
     </div>
 
@@ -131,32 +109,40 @@
   </div>
 
   <a id="ceremony" name="ceremony" class="anchor"></a>
-  <div class="scroll-sm bg-cream" id="clock">
-    <div id="clockdiv">
-      <div class="timeBlock">
-        <span class="days"></span>
-        <div class="smalltext">Days</div>
-      </div>
-      <div class="timeBlock">
-        <span class="hours"></span>
-        <div class="smalltext">Hrs</div>
-      </div>
-      <div class="timeBlock">
-        <span class="minutes"></span>
-        <div class="smalltext">Mins</div>
-      </div>
-      <div class="timeBlock">
-        <span class="seconds"></span>
-        <div class="smalltext">Secs</div>
+  <div class="parallax">
+    <div id="clock">
+      <div id="clockdiv">
+        <div class="fullWidth">
+          <div id="clockHolder" class="box-shadow">
+            <div class="timeBlock box-shadow">
+              <div class="days number"></div>
+              <div class="smalltext">Days</div>
+            </div>
+            <div class="timeBlock box-shadow">
+              <div class="hours number"></div>
+              <div class="smalltext">Hrs</div>
+            </div>
+            <div id="clockBreak"></div>
+            <div class="timeBlock box-shadow">
+              <div class="minutes number"></div>
+              <div class="smalltext">Mins</div>
+            </div>
+            <div class="timeBlock box-shadow">
+              <div class="seconds number"></div>
+              <div class="smalltext">Secs</div>
+            </div>
+          </div>
+        </div>
+        <img style="height:100px" src="images/leaves.svg"/>
       </div>
     </div>
   </div>
 
   <a id="story" name="story" class="anchor"></a>
-  <div class="parallax"></div>
+  <div class="scroll-sm bg-cream"></div>
 
   <a id="gallery" name="gallery" class="anchor"></a>
-  <div class="scroll-md bg-light-gray">
+  <div class="scroll-fluid bg-light-gray">
     <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
         <div class="slides"></div>
         <h3 class="title"></h3>
@@ -436,27 +422,27 @@
             <div class="inviteesWillAttend">
               <p id="confirmMsg">Please confirm your details before submitting.</p>
               <div class="row">
-                <div id="guest_s" class="col-md-6"><b>Guest(s)</b></div>
-                <div class="col-md-6 text-right"><b>Count</b></div>
+                <div id="guest_s" class="col-md-6 col-sm-6 col-xs-6"><b>Guest(s)</b></div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right"><b>Count</b></div>
               </div>
               <div id="attendingInvitees"></div>
               <div class="row">
-                <div class="col-md-6 add-guests-label"><b>Additional Guests</b></div>
+                <div class="col-md-6 col-sm-6 col-xs-6 add-guests-label"><b>Additional Guests</b></div>
               </div>
               <div class="row">
-                <div class="col-md-6 add-guests">Adults</div>
-                <div id="addAdultsCount" class="col-md-6 text-right count">0</div>
+                <div class="col-md-6 col-sm-6 col-xs-6 add-guests">Adults</div>
+                <div id="addAdultsCount" class="col-md-6 col-sm-6 col-xs-6 text-right count">0</div>
               </div>
               <div class="row">
-                <div class="col-md-6 add-guests">Children</div>
-                <div id="addChildrenCount" class="col-md-6 text-right count">0</div>
+                <div class="col-md-6 col-sm-6 col-xs-6 add-guests">Children</div>
+                <div id="addChildrenCount" class="col-md-6 col-sm-6 col-xs-6 text-right count">0</div>
               </div>
 
               <hr />
 
               <div class="row">
-                <div class="col-md-6"><b>Total Attending</b></div>
-                <div id="totalAttending" class="col-md-6 text-right count"><b>5</b></div>
+                <div class="col-md-6 col-sm-6 col-xs-6"><b>Total Attending</b></div>
+                <div id="totalAttending" class="col-md-6 col-sm-6 col-xs-6 text-right count"><b>5</b></div>
               </div>
             </div>
             <div class="inviteesWillNotAttend">
@@ -468,7 +454,11 @@
           </div>
 
           <!-- modal-4 -->
-          <!-- <input type="text" class="form-control" placeholder="Email Address (optional)" id="email" /> -->
+          <div class="mb-4">
+            <p id="emailMsg">Enter your email address to<br />receive a copy of your R.S.V.P.</p>
+            <br />
+            <input type="text" class="form-control" placeholder="Email Address" id="email" />
+          </div>
           <!-- modal-5 -->
         </div>
         <div class="modal-footer">
@@ -484,9 +474,12 @@
           </div>
           <!-- modal-3 -->
           <div class="mf-3">
-            <button type="button" class="btn btn-default mbtn-3">Send RSVP</button>
+            <button type="button" class="btn btn-default mbtn-3">Send R.S.V.P.</button>
           </div>
           <!-- modal-4 -->
+          <div class="mf-4">
+            <button type="button" class="btn btn-default mbtn-4">Send Email</button>
+          </div>
           <!-- modal-5 -->
 
         </div>

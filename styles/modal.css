@@ -167,6 +167,12 @@ button.back {
 
 /*----- modal-body 4 -----*/
 
+.mb-4 {
+  width: 100%;
+  height: 100%;
+  padding: 10px 50px;
+}
+
 /*----- modal-footer -----*/
 .modal-footer > .mf-1,
 .modal-footer > .mf-2,
@@ -179,6 +185,10 @@ button.back {
 .mf-3,
 .mf-4 {
   display: none;
+}
+
+.modal-footer button {
+  width: 200px;
 }
 
 /*----- modal-footer 1 -----*/

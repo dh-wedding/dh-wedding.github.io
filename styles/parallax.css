@@ -9,6 +9,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 15px;
 }
 @media only screen and (max-device-width: 1024px) {
   .parallax {
@@ -19,14 +20,23 @@ html {
   height: 400px;
   width: 100%;
   padding: 15px;
+  clear: both;
 }
 .scroll-md {
   height: 700px;
   width: 100%;
   padding: 15px;
+  clear: both;
 }
 .scroll-lg {
   height: 100vh;
   width: 100%;
   padding: 15px;
+  clear: both;
+}
+.scroll-fluid {
+  height: auto;
+  width: 100%;
+  padding: 15px;
+  clear: both;
 }
