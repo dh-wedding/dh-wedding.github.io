@@ -1,9 +1,13 @@
+/* @media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+} */
 body,
 html {
   height: 100%;
 }
 .parallax {
-  background-image: url("../images/boquet.jpg");
   height: calc(100vh - 75px);
   background-attachment: fixed;
   background-position: center;
@@ -11,10 +15,26 @@ html {
   background-size: cover;
   padding: 15px;
 }
-@media only screen and (max-device-width: 1024px) {
-  .parallax {
-    background-attachment: scroll;
-  }
+.parallax-fluid {
+  height: auto;
+  clear: both;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.relative {
+  position: relative;
+}
+/* @media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+} */
+.parallax-padding {
+  height: 100%;
+  width: 100%;
+  padding: 0 15px 15px 15px;
 }
 .scroll-sm {
   height: 400px;

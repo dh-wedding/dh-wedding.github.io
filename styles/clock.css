@@ -3,6 +3,8 @@
   display: table;
   width: 100%;
   height: 100%;
+  z-index: 2;
+  position: relative; /*added because of overlay*/
 }
 
 #clockdiv{
@@ -12,7 +14,7 @@
   /*color: #A8A4AD; complementary color of cream*/
   /*color: #FF6F5E;*/
   display: table-cell;
-  vertical-align: bottom;
+  vertical-align: middle;
   font-weight: 100;
   text-align: center;
   font-size: 30px;
@@ -56,7 +58,7 @@
   height:10px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     #clockBreak {
         display: block;
     }
@@ -71,9 +73,4 @@
 
 .fullWidth {
   width: 100%;
-}
-
-.box-shadow { box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
-                          0 1px 5px 0 rgba(0,0,0,0.12),
-                          0 3px 1px -2px rgba(0,0,0,0.2);
 }

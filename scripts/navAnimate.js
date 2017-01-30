@@ -9,3 +9,9 @@ else {
   $(".navbar-fixed-top").removeClass("navbar-animation");
 }
 });
+
+// collapse navbar on focus out
+
+$('#navbar').focusout(function(){
+  $('.navbar-collapse').collapse('hide');
+});

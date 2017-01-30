@@ -2,12 +2,6 @@
 body {
   font-family: arial, sans-serif;
 }
-.bg-light-gray {
-  background-color: #f1f1f1;
-}
-.bg-gray {
-  background-color: #272727;
-}
 .bg-cream-lighter {
   background-color: #ffffff;
 }
@@ -23,8 +17,17 @@ body {
 .bg-cream-darker {
   background-color: #b8b58f;
 }
-.bg-white {
-  background-color: #ffffff;
+.bg-boquet {
+  background-image: url("../images/boquet1.jpg");
+}
+.bg-boquet2 {
+  background-image: url("../images/boquet2.jpg");
+}
+.bg-artsy1 {
+  background-image: url("../images/artsy1.jpg");
+}
+.bg-artsy2 {
+  background-image: url("../images/artsy2.jpg");
 }
 /*----- anchors -----*/
 a.anchor {
@@ -45,6 +48,10 @@ a:focus {
 a:focus,
 a:active {
   outline: none !important;
+}
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-top .navbar-collapse {
+  max-height: none !important;
 }
 /*----- modal -----*/
 /*----- rsvp modal -----*/
@@ -75,6 +82,87 @@ a:active {
 .modal .btn-default {
   background-image: none !important;
   background-color: #fffffb;
+}
+/*----- ceremony -----*/
+#cutout {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+#cutout:before {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-shadow: 0px -200px 0px 1000px rgba(255, 254, 241, 0.8);
+}
+#ceremonyDetailsContainer {
+  margin: 0 auto;
+  /*this is what centers the div*/
+
+  margin-bottom: 30px;
+  padding: 5px;
+  background-color: #fffef1;
+  display: table;
+}
+.ceremony-details {
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  background-color: #ffffff;
+  vertical-align: top;
+  margin: 5px;
+}
+.leavesContainer {
+  width: 100%;
+  height: 120px;
+  padding: 20px 10%;
+}
+.leaves {
+  height: 100%;
+  width: 100%;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+}
+.leavesTop {
+  background-image: url(../images/leaves.svg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.leavesBottom {
+  background-image: url(../images/leaves.svg);
+}
+@media screen and (max-width: 1024px) {
+  #leavesContainer {
+    padding: 0 0;
+  }
+}
+.detailsBreak {
+  display: none;
+  height: 0px;
+}
+@media screen and (max-width: 768px) {
+  .detailsBreak {
+    display: block;
+  }
+  .ceremony-details {
+    width: 300px;
+    height: 300px;
+  }
+}
+.m-top-10 {
+  margin-top: 10px;
+}
+.m-bot-10 {
+  margin-bottom: 10px;
 }
 /*----- gallery -----*/
 #links {
@@ -117,12 +205,6 @@ a:active {
   transform: rotate(-3deg);
 }
 /*----- registries -----*/
-.amazon {
-  background-image: url(../images/registry/amazon.svg);
-  background-repeat-x: no-repeat;
-  background-position: center;
-  height: 50px;
-}
 .bed-bath-beyond {
   background-image: url(../images/registry/bed-bath-beyond.svg);
   background-repeat-x: no-repeat;
@@ -141,9 +223,19 @@ a:active {
   background-position: center;
   height: 50px;
 }
-.amazon,
 .bed-bath-beyond,
 .belk,
 .target {
   margin: 0px;
+}
+/*----- additional styling -----*/
+.box-shadow {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
 }
