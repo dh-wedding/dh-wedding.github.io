@@ -60,7 +60,7 @@
           <li><a href="#story">Story</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#location">Location</a></li>
-          <li><a href="#registry">Registry</a></li>
+          <li><a href="#registry">Registries</a></li>
           <li><a href="" data-toggle="modal" data-target="#rsvpModal">R.S.V.P.</a></li>
         </ul>
       </div>
@@ -110,7 +110,7 @@
 
   <a id="ceremony" name="ceremony" class="anchor"></a>
   <div class="parallax-fluid relative bg-artsy2">
-  <div class="overlay"></div>
+  <div class="overlay oly-fluid oly-black"></div>
     <div id="clock">
       <div id="clockdiv">
         <div class="fullWidth">
@@ -118,11 +118,20 @@
           <div class="leaves leavesTop"></div>
         </div>
           <div id="ceremonyDetailsContainer" class=" box-shadow">
-            <div id="cdLocation" class="ceremony-details box-shadow"></div>
+            <div class="ceremony-details box-shadow">
+              <div id="detailsLocation" class="details"></div>
+              <p>Southern House<br/>and Garden</p>
+            </div>
             <div class="detailsBreak"></div>
-            <div id="cdDayTime" class="ceremony-details box-shadow"></div>
+            <div class="ceremony-details box-shadow">
+              <div id="detailsTime" class="details"></div>
+              <p>5:00<br/>in the evening</p>
+            </div>
             <div class="detailsBreak"></div>
-            <div id="cdAttire" class="ceremony-details box-shadow"></div>
+            <div class="ceremony-details box-shadow">
+              <div id="detailsAttire" class="details"></div>
+              <p>Dressy<br/>Casual</p>
+            </div>
           </div>
           <div id="clockHolder" class="box-shadow">
             <div class="timeBlock box-shadow">
@@ -340,22 +349,146 @@
     </div>
   </div>
 
-  <a id="location" name="location" class="anchor"></a>
-  <div id="map"></div>
-
-  <a id="registry" name="registry" class="anchor"></a>
+<!--   
   <div class="parallax bg-boquet2">
   </div>
 
   <div class="scroll-sm bg-cream-lighter"></div>
   <div class="scroll-sm bg-cream-light"></div>
-  <div class="scroll-sm bg-cream"></div>
-  <div class="scroll-sm bg-cream-dark"></div>
-  <div class="scroll-sm bg-cream-darker">
-    <div class="row">
-    <div class="col-md-4 col-sm-4 col-xs-12 bed-bath-beyond"></div>
-      <div class="col-md-4 col-sm-4 col-xs-12 belk"></div>
-      <div class="col-md-4 col-sm-4 col-xs-12 target"></div>
+  <div class="scroll-sm bg-cream"></div> -->
+
+<!-- 
+  <div class="scroll-md bg-arbor">
+    <div class="overlay oly-static oly-cream"></div>
+    <div id="weddingParty" class="narrow">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 wed-group-header">Wedding Party</div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-group-header">Maid of Honor</div>
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-group-header">Best Man</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-party-member">Campbell Smith</div>
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-party-member">Drew Kidd</div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-group-header">Bridesmaids</div>
+        <div class="col-md-6 col-sm-6 col-xs-6"></div>
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-group-header">Groomsmen</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Sarah Montgomery</div>
+        <div class="col-md-6 col-sm-6 col-xs-6"></div>
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Jonathan Harris</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Hannah Marlowe</div>
+        <div class="col-md-6 col-sm-6 col-xs-6"></div>
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Ethan McKenzie</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Kathryn McCracken</div>
+        <div class="col-md-6 col-sm-6 col-xs-6"></div>
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Zach Hall</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Morgan Blackburn</div>
+        <div class="col-md-6 col-sm-6 col-xs-6"></div>
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Will Flowers</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Kadyn Sparks</div>
+        <div class="col-md-6 col-sm-6 col-xs-6"></div>
+        <div class="col-md-3 col-sm-3 col-xs-3 wed-party-member">Chase Garner</div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-group-header">Flower Girls</div>
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-group-header">Ring Bearer</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-party-member">Kinleigh Sparks</div>
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-party-member">Jem Talmadge</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 wed-party-member">Hazel Talmadge</div>
+        <div class="col-md-6 col-sm-6 col-xs-6"></div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 wed-group-header">Officiant</div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 wed-party-member">Ben Talmadge</div>
+      </div>
+    </div>
+  </div> -->
+
+  <a id="location" name="location" class="anchor"></a>
+  <div id="map"></div>
+
+  <!-- registries/footer -->
+  <a id="registry" name="registry" class="anchor"></a>
+  <div class="scroll-fluid bg-cream-darker">
+    <div class="narrow">
+      <div id="knotMessage" class="row">
+        <p>View our registries on <a href="https://goo.gl/G7ApmG" target="_blank"><span id="theknot"></span></a></p>
+      </div>
+      <div class="row">
+        <!-- Bed Bath and Beyond -->
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="bot-card box-shadow">
+            <div class="scaler">
+              <div class="top-card box-shadow">
+                <div class="side-padding"></div>
+                  <a href="https://www.bedbathandbeyond.com:443/store/giftregistry/view_registry_guest.jsp?registryId=544172162&eventType=Wedding&pwsurl=" target="_blank">
+                    <div id="bedBathBeyond" class="registry"></div>
+                  </a>
+                <div class="side-padding"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Belk -->
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="bot-card box-shadow">
+            <div class="scaler">
+              <div class="top-card box-shadow">
+                <div class="side-padding"></div>
+                  <a href="http://www.belk.com/bridalregistry/bridal_registry_view.jsp?selectedGRHID=8727923305370153&FOLDER%3C%3Efolder_id=2534374302036072&bmUID=lDKgcHa" target="_blank">
+                    <div id="belk" class="registry"></div>
+                  </a>
+                <div class="side-padding"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Target -->
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="bot-card box-shadow">
+            <div class="scaler">
+              <div class="top-card box-shadow">
+                <div class="side-padding"></div>
+                  <a href="http://www.target.com/gift-registry/registry/93a8edf0592e4403a1af4939befbf9d4?ref=registryCopiedLink" target="_blank">
+                    <div id="target" class="registry"></div>
+                  </a>
+                <div class="side-padding"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- copyright -->
+      <div id="copyright">
+        Copyright &copy;&nbsp;
+        <script type="text/javascript">
+          document.write(new Date().getFullYear())
+        </script>
+        &nbsp;derekandhaleywedding.com. <br id="copyrightBreak" />All rights reserved.
+      </div>
     </div>
   </div>
 
@@ -465,7 +598,7 @@
 
           <!-- modal-4 -->
           <div class="mb-4">
-            <p id="emailMsg">Enter your email address to<br />receive a copy of your R.S.V.P.</p>
+            <p id="emailMsg">Enter your email address to<br />stay up to date on the upcoming event.</p>
             <br />
             <input type="text" class="form-control" placeholder="Email Address" id="email" />
           </div>

@@ -1,10 +1,10 @@
 //Variables
 
-@cream-lighter: #FFFFFF;
-@cream-light:   #FFFFFB;
-@cream:         #FFFEF1;
-@cream-dark:    #D9D7BF;
-@cream-darker:  #B8B58F;
+@cream-lighter: #FFFFFF;  //rgb(255,255,255);
+@cream-light:   #FFFFFB;  //rgb(255,255,251);
+@cream:         #FFFEF1;  //rgb(255,254,241);
+@cream-dark:    #D9D7BF;  //rgb(217,215,191);
+@cream-darker:  #B8B58F;  //rgb(184,181,143);
 
 //Mixins
 
@@ -23,6 +23,13 @@ body {
 .bg-boquet2 { background-image: url("../images/boquet2.jpg"); }
 .bg-artsy1  { background-image: url("../images/artsy1.jpg"); }
 .bg-artsy2  { background-image: url("../images/artsy2.jpg"); }
+.bg-arbor   {
+  background-image: url("../images/weddingArbor.jpg");
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 /*----- anchors -----*/
 a.anchor {
@@ -89,32 +96,6 @@ a:focus,a:active {
 
 /*----- ceremony -----*/
 
-// #cutout {
-//   height: 150px;
-//   width: 100%;
-//   background-color: @cream;
-//   -webkit-clip-path: ellipse(50% 40% at 50% 0%);
-//   clip-path: ellipse(50% 40% at 50% 0%);
-// }
-
-
-#cutout{
-    width:100%;
-    height:200px;
-    position:relative;
-    overflow:hidden;
-}
-#cutout:before{
-    content:'';
-    position:absolute;
-    bottom:-50%;
-    width:100%;
-    height:100%;
-    border-radius:100%;
-    box-shadow: 0px -200px 0px 1000px rgba(255,254,241,.8);
-}
-
-
 #ceremonyDetailsContainer {
   margin: 0 auto; /*this is what centers the div*/
   margin-bottom: 30px;
@@ -122,6 +103,13 @@ a:focus,a:active {
   background-color: @cream;
   display:table;
 }
+
+#ceremonyDetailsContainer p {
+  font-family: 'Alegreya', serif;
+  text-align: center;
+  font-size: 1.6em;
+}
+
 
 .ceremony-details {
   padding: 10px;
@@ -133,13 +121,29 @@ a:focus,a:active {
   margin: 5px;
 }
 
-#cdLocation {
+#detailsLocation {
+  background-image: url(../images/shg_logo_colored.svg);
 }
 
-#cdDay {
+#detailsTime {
+  background-image: url(../images/clock.svg);
 }
 
-#cdTime {
+#detailsAttire {
+  background-image: url(../images/shirt.svg);
+}
+
+.details {
+  height: 80px;
+  width: 80px;
+  /* width: ~"calc(100% - 58px)"; with side-panel borders*/
+  margin:0;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  // background-size: contain;
+  display:inline-block;
+  vertical-align: top;
 }
 
 .leavesContainer {
@@ -190,8 +194,6 @@ a:focus,a:active {
       height: 300px;
     }
 }
-
-
 
 .m-top-10 {
   margin-top: 10px;
@@ -250,31 +252,122 @@ a:focus,a:active {
           transform: rotate(-3deg);
 }
 
+/*----- wedding party -----*/
+
+#weddingParty {
+  text-align: center;
+  font-family: 'Alegreya', serif;
+}
+
+.wed-group-header {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.wed-party-member {
+  font-size: 1.8em;
+}
+
 /*----- registries -----*/
 
-.bed-bath-beyond {
+#bedBathBeyond {
   background-image: url(../images/registry/bed-bath-beyond.svg);
-  background-repeat-x: no-repeat;
-  background-position: center;
-  height:50px;
-}
-.belk {
-  background-image: url(../images/registry/belk.svg);
-  background-repeat-x: no-repeat;
-  background-position: center;
-  height:50px;
-}
-.target {
-  background-image: url(../images/registry/target.svg);
-  background-repeat-x: no-repeat;
-  background-position: center;
-  height:50px;
 }
 
-.bed-bath-beyond,
-.belk,
-.target {
-  margin:0px;
+#belk {
+  background-image: url(../images/registry/belk.svg);
+}
+
+#target {
+  background-image: url(../images/registry/target.svg);
+}
+
+.registry {
+  height: 100%;
+  width: ~"calc(100% - 38px)";
+  /* width: ~"calc(100% - 58px)"; with side-panel borders*/
+  margin:0;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display:inline-block;
+  vertical-align: top;
+}
+
+.side-padding{
+  height:100%;
+  width: 15px;
+  display:inline-block;
+  vertical-align: top;
+  margin: 0;
+  /* border: 1px solid #f0f; */
+}
+
+.scaler {
+  width: auto;
+  position: relative;
+  height: 0;
+  padding-bottom: 40%;
+  min-height:50px;
+}
+
+.top-card {
+  background-color: @cream-darker;
+  height:100%;
+  width:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bot-card {
+  background-color: @cream-dark;
+  padding:15px;
+  min-width:200px;
+  min-height:50px;
+  margin: 10px 25px;
+}
+
+#knotMessage {
+  text-align: center;
+  font-size: 1.5em;
+  color: @cream-dark;
+  font-family: 'Alegreya', serif;
+}
+
+#theknot {
+  background-image: url(../images/theknot.svg);
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  // background-size: cover;
+  height: 1.5em;
+  width: 100px;
+  display:inline-block;
+  vertical-align: baseline;
+}
+
+/*----- copyright -----*/
+#copyright {
+  width: 100%;
+  text-align: center;
+  font-size: .9em;
+  color: @cream-dark;
+  margin: 40px 0px 10px 0px;
+  font-family: 'Alegreya', serif;
+}
+
+#copyrightBreak {
+  display: none;
+}
+
+@media screen and (max-width: 767) {
+    #copyrightBreak {
+        display: block;
+    }
 }
 
 
@@ -285,10 +378,29 @@ a:focus,a:active {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  height:100%;
   width:100%;
-  // margin: -15px;
-  z-index: 1;
+  z-index: 0;
   position: absolute;
+}
+
+.oly-fluid {
+  height:100%;
+}
+
+.oly-static {
+  height:inherit;
+}
+
+.oly-black {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.oly-cream {
+  background-color: rgba(255, 254, 241, 0.8);
+}
+
+.narrow {
+  width: 100%;
+  height: inherit;
+  padding: 0px 10%;
 }

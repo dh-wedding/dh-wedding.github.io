@@ -29,6 +29,13 @@ body {
 .bg-artsy2 {
   background-image: url("../images/artsy2.jpg");
 }
+.bg-arbor {
+  background-image: url("../images/weddingArbor.jpg");
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 /*----- anchors -----*/
 a.anchor {
   display: block;
@@ -84,21 +91,6 @@ a:active {
   background-color: #fffffb;
 }
 /*----- ceremony -----*/
-#cutout {
-  width: 100%;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-}
-#cutout:before {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  box-shadow: 0px -200px 0px 1000px rgba(255, 254, 241, 0.8);
-}
 #ceremonyDetailsContainer {
   margin: 0 auto;
   /*this is what centers the div*/
@@ -108,6 +100,11 @@ a:active {
   background-color: #fffef1;
   display: table;
 }
+#ceremonyDetailsContainer p {
+  font-family: 'Alegreya', serif;
+  text-align: center;
+  font-size: 1.6em;
+}
 .ceremony-details {
   padding: 10px;
   width: 200px;
@@ -116,6 +113,27 @@ a:active {
   background-color: #ffffff;
   vertical-align: top;
   margin: 5px;
+}
+#detailsLocation {
+  background-image: url(../images/shg_logo_colored.svg);
+}
+#detailsTime {
+  background-image: url(../images/clock.svg);
+}
+#detailsAttire {
+  background-image: url(../images/shirt.svg);
+}
+.details {
+  height: 80px;
+  width: 80px;
+  /* width: ~"calc(100% - 58px)"; with side-panel borders*/
+
+  margin: 0;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  display: inline-block;
+  vertical-align: top;
 }
 .leavesContainer {
   width: 100%;
@@ -204,38 +222,130 @@ a:active {
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
+/*----- wedding party -----*/
+#weddingParty {
+  text-align: center;
+  font-family: 'Alegreya', serif;
+}
+.wed-group-header {
+  font-size: 2em;
+  font-weight: 500;
+}
+.wed-party-member {
+  font-size: 1.8em;
+}
 /*----- registries -----*/
-.bed-bath-beyond {
+#bedBathBeyond {
   background-image: url(../images/registry/bed-bath-beyond.svg);
-  background-repeat-x: no-repeat;
-  background-position: center;
-  height: 50px;
 }
-.belk {
+#belk {
   background-image: url(../images/registry/belk.svg);
-  background-repeat-x: no-repeat;
-  background-position: center;
-  height: 50px;
 }
-.target {
+#target {
   background-image: url(../images/registry/target.svg);
-  background-repeat-x: no-repeat;
-  background-position: center;
-  height: 50px;
 }
-.bed-bath-beyond,
-.belk,
-.target {
-  margin: 0px;
+.registry {
+  height: 100%;
+  width: calc(100% - 38px);
+  /* width: ~"calc(100% - 58px)"; with side-panel borders*/
+
+  margin: 0;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: top;
+}
+.side-padding {
+  height: 100%;
+  width: 15px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  /* border: 1px solid #f0f; */
+
+}
+.scaler {
+  width: auto;
+  position: relative;
+  height: 0;
+  padding-bottom: 40%;
+  min-height: 50px;
+}
+.top-card {
+  background-color: #b8b58f;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bot-card {
+  background-color: #d9d7bf;
+  padding: 15px;
+  min-width: 200px;
+  min-height: 50px;
+  margin: 10px 25px;
+}
+#knotMessage {
+  text-align: center;
+  font-size: 1.5em;
+  color: #d9d7bf;
+  font-family: 'Alegreya', serif;
+}
+#theknot {
+  background-image: url(../images/theknot.svg);
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  height: 1.5em;
+  width: 100px;
+  display: inline-block;
+  vertical-align: baseline;
+}
+/*----- copyright -----*/
+#copyright {
+  width: 100%;
+  text-align: center;
+  font-size: .9em;
+  color: #d9d7bf;
+  margin: 40px 0px 10px 0px;
+  font-family: 'Alegreya', serif;
+}
+#copyrightBreak {
+  display: none;
+}
+@media screen and (max-width: 767) {
+  #copyrightBreak {
+    display: block;
+  }
 }
 /*----- additional styling -----*/
 .box-shadow {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 0;
   position: absolute;
+}
+.oly-fluid {
+  height: 100%;
+}
+.oly-static {
+  height: inherit;
+}
+.oly-black {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.oly-cream {
+  background-color: rgba(255, 254, 241, 0.8);
+}
+.narrow {
+  width: 100%;
+  height: inherit;
+  padding: 0px 10%;
 }

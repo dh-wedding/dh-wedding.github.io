@@ -9,15 +9,12 @@
 
 #clockdiv{
   margin:auto 0px;
-  font-family: 'Montserrat', sans-serif;
   color: #B8B58F;
   /*color: #A8A4AD; complementary color of cream*/
   /*color: #FF6F5E;*/
   display: table-cell;
   vertical-align: middle;
-  font-weight: 100;
   text-align: center;
-  font-size: 30px;
   height: inherit;
   width: 100%;
 /*  border: 1px solid #f0f;*/
@@ -30,6 +27,12 @@
   display: inline-block;
   width: 60px;
   height: 60px;
+}
+
+#clockdiv .number {
+  font-weight: 100;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
 }
 
 .smalltext{
