@@ -4,21 +4,17 @@
   padding-bottom: .4em;
 }*/
 .slide1 {
-  background-image: url('../images/carousel/MHP_5459.jpg');
+  background-image: url('../images/gallery/photos/20.jpg');
 }
 .slide2 {
-  background-image: url('../images/carousel/MHP_5539_edit.jpg');
+  background-image: url('../images/gallery/photos/52.jpg');
 }
 .slide3 {
-  background-image: url('../images/carousel/MHP_5575.jpg');
-}
-.slide4 {
-  background-image: url('../images/carousel/MHP_5591.jpg');
+  background-image: url('../images/gallery/photos/65.jpg');
 }
 .slide1,
 .slide2,
-.slide3,
-.slide4 {
+.slide3 {
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center;

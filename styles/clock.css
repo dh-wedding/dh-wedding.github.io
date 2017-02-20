@@ -31,7 +31,8 @@
 
 #clockdiv .number {
   font-weight: 100;
-  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Alegreya', serif;
   font-size: 30px;
 }
 

@@ -23,6 +23,13 @@ body {
 .bg-boquet2 { background-image: url("../images/boquet2.jpg"); }
 .bg-artsy1  { background-image: url("../images/artsy1.jpg"); }
 .bg-artsy2  { background-image: url("../images/artsy2.jpg"); }
+.bg-wood  { 
+  background-image: url("../images/wood.jpg");
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .bg-arbor   {
   background-image: url("../images/weddingArbor.jpg");
   background-repeat-x: no-repeat;
@@ -104,10 +111,17 @@ a:focus,a:active {
   display:table;
 }
 
+#ceremonyDetailsContainer .details-header {
+  font-family: 'Zeyada', cursive;
+  text-align: center;
+  font-size: 2.3em;
+  margin-bottom: -5px;
+}
+
 #ceremonyDetailsContainer p {
   font-family: 'Alegreya', serif;
   text-align: center;
-  font-size: 1.6em;
+  font-size: 1.35em;
 }
 
 
@@ -126,16 +140,16 @@ a:focus,a:active {
 }
 
 #detailsTime {
-  background-image: url(../images/clock.svg);
+  background-image: url(../images/clock_colored.svg);
 }
 
 #detailsAttire {
-  background-image: url(../images/shirt.svg);
+  background-image: url(../images/shirt_colored.svg);
 }
 
 .details {
-  height: 80px;
-  width: 80px;
+  height: 75px;
+  width: 75px;
   /* width: ~"calc(100% - 58px)"; with side-panel borders*/
   margin:0;
   background-repeat-x: no-repeat;
@@ -175,9 +189,9 @@ a:focus,a:active {
 
 
 @media screen and (max-width: 1024px) {
-    #leavesContainer {
-        padding: 0 0;
-    }
+  #leavesContainer {
+    padding: 0 0;
+  }
 }
 
 .detailsBreak{
@@ -186,13 +200,23 @@ a:focus,a:active {
 }
 
 @media screen and (max-width: 768px) {
-    .detailsBreak {
-        display: block;
-    }
-    .ceremony-details {
-      width: 300px;
-      height: 300px;
-    }
+  .detailsBreak {
+    display: block;
+  }
+  .ceremony-details {
+    width: 300px;
+    height: 300px;
+  }
+  .details {
+    height: 160px;
+    width: 160px;
+  }
+  #ceremonyDetailsContainer .details-header {
+    font-size: 2.8em;
+  }
+  #ceremonyDetailsContainer p {
+    font-size: 1.65em;
+  }
 }
 
 .m-top-10 {
@@ -254,18 +278,57 @@ a:focus,a:active {
 
 /*----- wedding party -----*/
 
+.water-color-paper{
+  height:100%;
+  width: 100%;
+  position: relative;
+  background-image: url(../images/watercolortile.png);
+  background-repeat-x: repeat;
+  background-repeat-y: repeat;
+  padding:50px;
+}
+
+.wed-party-border {
+  height: 100%;
+  border-style: solid;
+  border-width: 30px;
+  -moz-border-image: url(../images/border2.png) 30 repeat;
+  -webkit-border-image: url(../images/border2.png) 30 repeat;
+  -o-border-image: url(../images/border2.png) 30 repeat;
+  border-image: url(../images/border2.png) 30 fill repeat;
+  padding:15px;
+}
+
 #weddingParty {
   text-align: center;
   font-family: 'Alegreya', serif;
 }
 
-.wed-group-header {
-  font-size: 2em;
+.wed-party-main-header {
+  font-size: 4.5em;
   font-weight: 500;
+  font-family: 'Tangerine', cursive;
+}
+
+.wed-group-header {
+  font-size: 3.2em;
+  font-weight: 500;
+  font-family: 'Tangerine', cursive;
 }
 
 .wed-party-member {
-  font-size: 1.8em;
+  font-size: 1.4em;
+}
+
+#wedColBreak{
+  display: none;
+  height:20px;
+}
+
+@media screen and (max-width: 768px) {
+    #wedColBreak {
+        display: block;
+    }
 }
 
 /*----- registries -----*/
@@ -365,9 +428,9 @@ a:focus,a:active {
 }
 
 @media screen and (max-width: 767) {
-    #copyrightBreak {
-        display: block;
-    }
+  #copyrightBreak {
+    display: block;
+  }
 }
 
 
@@ -381,6 +444,8 @@ a:focus,a:active {
   width:100%;
   z-index: 0;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .oly-fluid {
@@ -396,11 +461,12 @@ a:focus,a:active {
 }
 
 .oly-cream {
-  background-color: rgba(255, 254, 241, 0.8);
+  background-color: rgba(255, 254, 241, 0.6);
 }
 
 .narrow {
   width: 100%;
   height: inherit;
-  padding: 0px 10%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
