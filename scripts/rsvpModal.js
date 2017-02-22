@@ -17,6 +17,7 @@ $(".mbtn-1").click(function(){
 
 var numInvitees = 0;
 var inviteeNames = [];
+var inviteId = null;
 var inviteeResponses = [];
 
 function getInvitees() {
@@ -44,6 +45,7 @@ function getInvitees() {
         inviteeNames.push(data_obj[i].fname + " " + data_obj[i].lname);
       }
       $('.selectpicker').selectpicker('refresh');
+      inviteId = data_obj[0].inviteId;
       numInvitees = data_obj.length;
       if (numInvitees < 2) {
         wellToIll();
@@ -423,15 +425,24 @@ function getTotalAttending() {
 }
 
 function sendRSVP(){
-  var rsvp = {
+  var rsvpData = {
+    inviteId: inviteId,
     inviteeNames: inviteeNames,
+    inviteeResponses: inviteeResponses,
+    addGuests: $("#chkbx").prop('checked'),
     addAdults: checkAddGuestsCount()[0],
     addChildren: checkAddGuestsCount()[1],
     total: getTotalAttending(),
     note: $('#note').val()
   }
-  // console.log(rsvp);
-  showModal4();
+  //http://127.0.0.1:4567
+  var url = "http://dh-wedding.herokuapp.com/";
+  $.ajax({
+    url: url,
+    type: "PUT",
+    success: showModal4,
+    data: rsvpData
+  });
 }
 
 $('.mbtn-3').click(function (e){
@@ -455,6 +466,25 @@ function showModal4() {
   });
 }
 
+function sendEmail(){
+  var emailAddress = {
+    inviteId: inviteId,
+    email: $("#email").val()
+  }
+  var url = "http://dh-wedding.herokuapp.com/email";
+  $.ajax({
+    url: url,
+    type: "PUT",
+    success: closeModal,
+    data: emailAddress
+  });
+}
+
+$('.mbtn-4').click(function (e){
+    e.preventDefault();
+    sendEmail();
+});
+
 
 //----- close modal -----//
 
@@ -466,6 +496,10 @@ function resetModal() {
     $('.mb-4').hide();
     $('.mf-4').hide();
     //need to add in modal 4 and 5
+}
+
+function closeModal() {
+  $('#rsvpModal').modal('hide');
 }
 
 $('#rsvpModal').on('hidden.bs.modal', function (e) {
