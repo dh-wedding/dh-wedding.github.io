@@ -178,25 +178,25 @@ a:active {
 }
 .detailsBreak {
   display: none;
-  height: 0px;
+  height: 10px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .detailsBreak {
     display: block;
   }
   .ceremony-details {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
   .details {
-    height: 160px;
-    width: 160px;
+    height: 120px;
+    width: 120px;
   }
   #ceremonyDetailsContainer .details-header {
-    font-size: 2.8em;
+    font-size: 2.5em;
   }
   #ceremonyDetailsContainer p {
-    font-size: 1.65em;
+    font-size: 1.55em;
   }
 }
 .m-top-10 {
@@ -209,7 +209,6 @@ a:active {
 #storyBg {
   width: 100%;
   min-height: calc(100vh - 75px);
-  background-color: #fffef1;
   background: url("../images/story_overlay.png");
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
@@ -230,6 +229,29 @@ a:active {
   border-radius: 50%;
   -webkit-shape-outside: circle();
   shape-outside: circle();
+}
+@media screen and (max-width: 425px) {
+  #storyBg {
+    background: url("../images/story_fade2.png");
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-size: 100%;
+  }
+  #circle-shape-example p {
+    line-height: 1.2em;
+    font-size: 1.2em;
+    text-shadow: 0px 0px 4px #fffef1;
+  }
+  #circle-shape-example .curve {
+    width: 90%;
+    height: auto;
+    min-width: 150px;
+    float: none;
+    margin: 0;
+    border-radius: 50%;
+    -webkit-shape-outside: circle();
+    shape-outside: circle();
+  }
 }
 /*----- gallery -----*/
 #links {
@@ -271,6 +293,21 @@ a:active {
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
+.thumb img {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .thumb {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .thumb {
+    width: 70px;
+    height: 70px;
+  }
+}
 /*----- wedding party -----*/
 .water-color-paper {
   height: 100%;
@@ -308,13 +345,34 @@ a:active {
 .wed-party-member {
   font-size: 1.4em;
 }
-#wedColBreak {
+.wed-col-break {
   display: none;
   height: 20px;
 }
-@media screen and (max-width: 768px) {
-  #wedColBreak {
+@media screen and (max-width: 767px) {
+  .wed-col-break {
     display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .water-color-paper {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wed-party-main-header {
+    font-size: 3.5em;
+  }
+  .wed-group-header {
+    font-size: 2.2em;
+  }
+  .wed-party-member {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .wed-party-main-header {
+    font-size: 3em;
   }
 }
 /*----- registries -----*/
@@ -378,6 +436,8 @@ a:active {
   font-size: 1.5em;
   color: #d9d7bf;
   font-family: 'Alegreya', serif;
+  display: inline-block;
+  width: 100%;
 }
 #theknot {
   background-image: url(../images/theknot.svg);
@@ -389,6 +449,14 @@ a:active {
   display: inline-block;
   vertical-align: baseline;
 }
+@media screen and (max-width: 767px) {
+  #theknot {
+    margin-left: -10px;
+  }
+  #knotMessage {
+    font-size: 1.2em;
+  }
+}
 /*----- copyright -----*/
 #copyright {
   width: 100%;
@@ -398,13 +466,11 @@ a:active {
   margin: 40px 0px 10px 0px;
   font-family: 'Alegreya', serif;
 }
-#copyrightBreak {
-  display: none;
+#copyright p {
+  margin: 0;
 }
-@media screen and (max-width: 767) {
-  #copyrightBreak {
-    display: block;
-  }
+.copyright-part {
+  display: inline-block;
 }
 /*----- additional styling -----*/
 .box-shadow {

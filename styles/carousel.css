@@ -117,3 +117,19 @@
     transform: translate3d(0, 0, 0);
   }
 }
+@media screen and (max-width: 768px) {
+  .carousel-overlay h1 {
+    font-size: 5em;
+  }
+  .carousel-overlay p {
+    font-size: 2.5em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .carousel-overlay h1 {
+    font-size: 5em;
+  }
+  .carousel-overlay p {
+    font-size: 2.3em;
+  }
+}
