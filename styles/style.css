@@ -209,25 +209,24 @@ a:active {
 #storyBg {
   width: 100%;
   min-height: calc(100vh - 75px);
-  background: -webkit-radial-gradient(70% 30%, rgba(255, 254, 241, 0), rgba(255, 254, 241, 0.85), #fffef1), url("../images/story.jpg");
-  background: radial-gradient(at 70% 30%, rgba(255, 254, 241, 0), rgba(255, 254, 241, 0.85), #fffef1), url("../images/story.jpg");
+  background-color: #fffef1;
+  background: url("../images/story_overlay.png");
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: 100%;
   padding: 30px;
 }
 #circle-shape-example p {
   line-height: 1.5em;
   font-size: 1.5em;
+  text-shadow: 0px 0px 4px #fffef1;
 }
 #circle-shape-example .curve {
-  width: 37%;
+  width: 25%;
   height: auto;
   min-width: 150px;
   float: right;
-  margin-left: 16%;
-  margin-right: 16%;
+  margin: 16%;
   border-radius: 50%;
   -webkit-shape-outside: circle();
   shape-outside: circle();
