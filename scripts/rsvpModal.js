@@ -21,12 +21,12 @@ var inviteId = null;
 var inviteeResponses = [];
 
 function getInvitees() {
-  var fname = $("#fname")[0].value;
-  var lname = $("#lname")[0].value;
+  var fname = $("#fname")[0].value.toLowerCase();
+  var lname = $("#lname")[0].value.toLowerCase();
   var params = "?fname=" + fname + "&lname=" + lname;
   var url = "https://dh-wedding.herokuapp.com/"+ params;
   $.get(url, function(data){
-    if (data.status == "success") {                                  //to emulate a failure to find invite change this to "!="
+    if (JSON.parse(data).status == "success") {                                  //to emulate a failure to find invite change this to "!="
       var ab_1 = "<div class=\"attend-block\">" +
                    "<div class=\"guest-name\">";
       var ab_2 =   "</div>" +
@@ -40,13 +40,13 @@ function getInvitees() {
                    "</div>" +
                  "</div>";
       var data_obj = JSON.parse(data);
-      for (var i = 0; i < data_obj.length ;i++) {
-        $("#attend-form").append(ab_1 + data_obj[i].fname + " " + data_obj[i].lname + "&nbsp;" + ab_2 + i + ab_3);
-        inviteeNames.push(data_obj[i].fname + " " + data_obj[i].lname);
+      for (var i = 0; i < data_obj.invite.length ;i++) {
+        $("#attend-form").append(ab_1 + data_obj.invite[i].fname + " " + data_obj.invite[i].lname + "&nbsp;" + ab_2 + i + ab_3);
+        inviteeNames.push(data_obj.invite[i].fname + " " + data_obj.invite[i].lname);
       }
       $('.selectpicker').selectpicker('refresh');
-      inviteId = data_obj[0].inviteId;
-      numInvitees = data_obj.length;
+      inviteId = data_obj.invite.inviteId;
+      numInvitees = data_obj.invite.length;
       if (numInvitees < 2) {
         wellToIll();
       }
