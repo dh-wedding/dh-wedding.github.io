@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 //----------------------- db ------------------------------//
 
-  // var url = "http://dh-wedding.herokuapp.com/?fname=Derek&lname=Kidd";
+  // var url = "//dh-wedding.herokuapp.com/?fname=Derek&lname=Kidd";
 
 $(".mbtn-1").click(function(){
   showSearch();
@@ -24,7 +24,7 @@ function getInvitees() {
   var fname = $("#fname")[0].value;
   var lname = $("#lname")[0].value;
   var params = "?fname=" + fname + "&lname=" + lname;
-  var url = "http://dh-wedding.herokuapp.com/"+ params;
+  var url = "//dh-wedding.herokuapp.com/"+ params;
   $.get(url, function(data, status){
     if (status == "success") {                                  //to emulate a failure to find invite change this to "!="
       var ab_1 = "<div class=\"attend-block\">" +
@@ -65,7 +65,7 @@ function getInvitees() {
 // $(".mbtn-1").click(function(){
 //   $.ajax({
 //     type: "GET",
-//     url: "http://dh-wedding.herokuapp.com/?fname=Derek&lname=Kidd",
+//     url: "//dh-wedding.herokuapp.com/?fname=Derek&lname=Kidd",
 //     crossDomain: true,
 //     data: {},
 //     dataType: "json",
@@ -78,6 +78,12 @@ function getInvitees() {
 //---------------------- gui ------------------------------//
 
 //----- modal 1 -----//
+
+$("#lname").keyup(function(event){
+  if (event.keyCode == 13){
+      $(".mbtn-1").click();
+  }
+});
 
 function showSearch() {
   if($('.notFound').is(':visible')) {
@@ -436,7 +442,7 @@ function sendRSVP(){
     note: $('#note').val()
   }
   //http://127.0.0.1:4567
-  var url = "http://dh-wedding.herokuapp.com/";
+  var url = "//dh-wedding.herokuapp.com/";
   $.ajax({
     url: url,
     type: "PUT",
@@ -471,7 +477,7 @@ function sendEmail(){
     inviteId: inviteId,
     email: $("#email").val()
   }
-  var url = "http://dh-wedding.herokuapp.com/email";
+  var url = "//dh-wedding.herokuapp.com/email";
   $.ajax({
     url: url,
     type: "PUT",
