@@ -50,7 +50,6 @@ function getInvitees() {
       }
       $('.selectpicker').selectpicker('refresh');
       inviteId = data_obj.invite[0].inviteId;
-      console.log(inviteId);
       numInvitees = data_obj.invite.length;
       if (numInvitees < 2) {
         wellToIll();
@@ -433,10 +432,7 @@ function sendRSVP(){
     total: getTotalAttending(),
     note: $('#note').val()
   }
-  //http://127.0.0.1:4567
-  console.log(rsvpData);
   var path = url;
-  console.log(path);
   $.ajax({
     url: path,
     type: "PUT",
@@ -467,14 +463,11 @@ function showModal4() {
 }
 
 function sendEmail(){
-  console.log(inviteId);
   var emailAddress = {
     inviteId: inviteId,
     email: $("#email").val()
   }
-  console.log(emailAddress);
   var path = url + "email";
-  console.log(path);
   $.ajax({
     url: path,
     type: "PUT",
