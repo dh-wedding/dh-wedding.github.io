@@ -8,8 +8,12 @@ $(document).ready(function() {
 
 
 //----------------------- db ------------------------------//
+var production = "//dh-wedding.herokuapp.com/";
+var localp = "http://dh-wedding.herokuapp.com/";
+var local = "http://127.0.0.1:4567";
 
-  // var url = "//dh-wedding.herokuapp.com/?fname=Derek&lname=Kidd";
+
+var url = production;
 
 $(".mbtn-1").click(function(){
   showSearch();
@@ -24,8 +28,8 @@ function getInvitees() {
   var fname = $("#fname")[0].value;
   var lname = $("#lname")[0].value;
   var params = "?fname=" + fname + "&lname=" + lname;
-  var url = "//dh-wedding.herokuapp.com/"+ params;
-  $.get(url, function(data){
+  var path = url + params;
+  $.get(path, function(data){
     if (JSON.parse(data).status == "success") {                                  //to emulate a failure to find invite change this to "!="
       var ab_1 = "<div class=\"attend-block\">" +
                    "<div class=\"guest-name\">";
@@ -45,7 +49,8 @@ function getInvitees() {
         inviteeNames.push(data_obj.invite[i].fname + " " + data_obj.invite[i].lname);
       }
       $('.selectpicker').selectpicker('refresh');
-      inviteId = data_obj.invite.inviteId;
+      inviteId = data_obj.invite[0].inviteId;
+      console.log(inviteId);
       numInvitees = data_obj.invite.length;
       if (numInvitees < 2) {
         wellToIll();
@@ -61,19 +66,6 @@ function getInvitees() {
     }
   });
 }
-
-// $(".mbtn-1").click(function(){
-//   $.ajax({
-//     type: "GET",
-//     url: "//dh-wedding.herokuapp.com/?fname=Derek&lname=Kidd",
-//     crossDomain: true,
-//     data: {},
-//     dataType: "json",
-//     success: function() { alert('Success!'); }
-//   });
-// });
-
-
 
 //---------------------- gui ------------------------------//
 
@@ -442,9 +434,11 @@ function sendRSVP(){
     note: $('#note').val()
   }
   //http://127.0.0.1:4567
-  var url = "//dh-wedding.herokuapp.com/";
+  console.log(rsvpData);
+  var path = url;
+  console.log(path);
   $.ajax({
-    url: url,
+    url: path,
     type: "PUT",
     success: showModal4,
     data: rsvpData
@@ -473,13 +467,16 @@ function showModal4() {
 }
 
 function sendEmail(){
+  console.log(inviteId);
   var emailAddress = {
     inviteId: inviteId,
     email: $("#email").val()
   }
-  var url = "//dh-wedding.herokuapp.com/email";
+  console.log(emailAddress);
+  var path = url + "email";
+  console.log(path);
   $.ajax({
-    url: url,
+    url: path,
     type: "PUT",
     success: closeModal,
     data: emailAddress
