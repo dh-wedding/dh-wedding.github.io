@@ -21,8 +21,8 @@ var inviteId = null;
 var inviteeResponses = [];
 
 function getInvitees() {
-  var fname = $("#fname")[0].value.toLowerCase();
-  var lname = $("#lname")[0].value.toLowerCase();
+  var fname = $("#fname")[0].value;
+  var lname = $("#lname")[0].value;
   var params = "?fname=" + fname + "&lname=" + lname;
   var url = "//dh-wedding.herokuapp.com/"+ params;
   $.get(url, function(data){
