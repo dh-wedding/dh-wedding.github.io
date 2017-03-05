@@ -64,3 +64,16 @@
   -o-transition: none !important;
   transition: none !important;
 }
+
+
+@media screen and (max-width: 1024px) {
+  .navbar-nav > li > a {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-nav > li > a {
+    font-size: 30px;
+  }
+}
