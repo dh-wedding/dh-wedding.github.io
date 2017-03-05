@@ -162,6 +162,7 @@ a:active {
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .leavesTop {
   background-image: url(../images/leaves.svg);
