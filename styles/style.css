@@ -212,7 +212,7 @@ a:active {
 #storyBg {
   width: 100%;
   min-height: calc(100vh - 75px);
-  background: url("../images/story_overlay.png");
+  background: url("../images/story_overlay.png") no-repeat;
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
   background-size: 100%;
@@ -400,6 +400,7 @@ a:active {
   background-size: contain;
   display: inline-block;
   vertical-align: top;
+  background-repeat: no-repeat;
 }
 .side-padding {
   height: 100%;
@@ -451,6 +452,7 @@ a:active {
   width: 100px;
   display: inline-block;
   vertical-align: baseline;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: 767px) {
   #theknot {
