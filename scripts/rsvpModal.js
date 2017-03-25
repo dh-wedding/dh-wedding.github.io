@@ -418,7 +418,10 @@ function setupTotalAttending() {
 }
 
 function getTotalAttending() {
-  return parseInt(checkInviteeResponses()[1]) + checkAddGuestsCount().reduce( ( prev, cur ) => prev + cur );
+  someNumber = parseInt(checkInviteeResponses()[1]);
+  someOtherNumber = checkAddGuestsCount().reduce( ( prev, cur ) => prev + cur);
+  return someNumber + someOtherNumber;
+  // return parseInt(checkInviteeResponses()[1]) + checkAddGuestsCount().reduce( ( prev, cur ) => prev + cur);
 }
 
 function sendRSVP(){
