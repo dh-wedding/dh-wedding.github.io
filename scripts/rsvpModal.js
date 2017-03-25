@@ -419,7 +419,7 @@ function setupTotalAttending() {
 
 function getTotalAttending() {
   someNumber = parseInt(checkInviteeResponses()[1]);
-  someOtherNumber = checkAddGuestsCount().reduce( ( prev, cur ) => prev + cur);
+  someOtherNumber = parseInt(checkAddGuestsCount().reduce( ( prev, cur ) => prev + cur));
   return someNumber + someOtherNumber;
   // return parseInt(checkInviteeResponses()[1]) + checkAddGuestsCount().reduce( ( prev, cur ) => prev + cur);
 }
